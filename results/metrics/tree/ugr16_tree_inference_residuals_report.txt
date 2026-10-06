@@ -1,0 +1,106 @@
+====================================================================================================================
+TREE-INFERENCE-RESIDUALS-001 — INFERENCIA PAREADA Y ANÁLISIS RESIDUAL JUNE
+====================================================================================================================
+Campaña marco:                  UGR16-TREE-ENSEMBLES-001
+Subcampaña:                     TREE-INFERENCE-RESIDUALS-001
+Runner version:                 1.0.1
+Runner SHA-256:                 be175e3ce86125af1881f05d0ef0b24e837288013ee50aeac77090796fcd58db
+
+GOBERNANZA
+--------------------------------------------------------------------------------------------------------------------
+Reentrenamiento:                NO
+Refit:                          NO
+Tuning:                         NO
+Selección:                      NO
+Predicciones fuente modificadas:NO
+RF* / XGB* / LGBM* / TREE*:     CONGELADOS
+
+INPUTS
+--------------------------------------------------------------------------------------------------------------------
+017 SHA-256:                    8c0a94e4ee80a84b78bf077d6abc3c18617ad1736b6d978047d0db1d52055003
+021 SHA-256:                    445ec43095bbf503d0a0ea45a2a209916fd705a0f197bb9b1961db2aeae74426
+008 SHA-256:                    cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a
+Tree manifest SHA-256:          f0a296c21b3077b2f9c8788fbb118572a203021ae69074bb1a4a2b027f3d2b46
+Tree predictions SHA-256:       7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad
+Stat manifest SHA-256:          847f877144f2932e0b5967b1de0678898cb640434dbfb20f2f9805d7c29883a7
+Stat predictions SHA-256:       21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353
+Stat model column detectada:    config
+
+INFERENCIA
+--------------------------------------------------------------------------------------------------------------------
+Loss:                           absolute error
+Loss differential:              reference - model
+Positive value:                 model improves over reference
+Bootstrap:                      circular moving-block, 5000 réplicas
+Primary block:                  12 intervalos = 60 min
+Sensitivity blocks:             6 / 12 / 24
+Confidence:                     0.95
+Random seed:                    20260717
+DM-HAC kernel:                  Bartlett
+DM-HAC lag:                     12 en H1/H3/H6/H12
+Multiple-testing correction:    NONE
+
+CONTRASTES PRIMARIOS
+--------------------------------------------------------------------------------------------------------------------
+lgbm_vs_persistence      H1  | LGB01 vs persistence | improvement=-8.2404 Mbit/s | CI=[-12.4050, -4.3077] | P(improve)=0.0000 | DM-HAC p=0.000175567 | bootstrap=reference_better
+lgbm_vs_persistence      H3  | LGB01 vs persistence | improvement=-19.0317 Mbit/s | CI=[-26.3461, -12.3652] | P(improve)=0.0000 | DM-HAC p=1.2669e-07 | bootstrap=reference_better
+lgbm_vs_persistence      H6  | LGB01 vs persistence | improvement=-27.6690 Mbit/s | CI=[-37.1870, -18.2957] | P(improve)=0.0000 | DM-HAC p=2.47219e-08 | bootstrap=reference_better
+lgbm_vs_persistence      H12 | LGB01 vs persistence | improvement=-29.1143 Mbit/s | CI=[-41.6860, -17.3132] | P(improve)=0.0000 | DM-HAC p=8.67754e-06 | bootstrap=reference_better
+rf_vs_persistence        H1  | RF01 vs persistence | improvement=-6.7194 Mbit/s | CI=[-10.7309, -2.9790] | P(improve)=0.0000 | DM-HAC p=0.00101541 | bootstrap=reference_better
+rf_vs_persistence        H3  | RF01 vs persistence | improvement=-17.5840 Mbit/s | CI=[-24.2471, -11.1334] | P(improve)=0.0000 | DM-HAC p=3.45138e-07 | bootstrap=reference_better
+rf_vs_persistence        H6  | RF01 vs persistence | improvement=-32.1403 Mbit/s | CI=[-41.4702, -23.3826] | P(improve)=0.0000 | DM-HAC p=5.70654e-11 | bootstrap=reference_better
+rf_vs_persistence        H12 | RF01 vs persistence | improvement=-33.1776 Mbit/s | CI=[-44.4798, -22.1888] | P(improve)=0.0000 | DM-HAC p=2.39899e-08 | bootstrap=reference_better
+tree_vs_arima            H1  | LGB01 vs ARIMA(6,1,12) | improvement=-9.3400 Mbit/s | CI=[-13.3824, -5.5832] | P(improve)=0.0000 | DM-HAC p=5.53531e-06 | bootstrap=reference_better
+tree_vs_arima            H3  | LGB01 vs ARIMA(6,1,12) | improvement=-20.8265 Mbit/s | CI=[-27.6400, -14.1149] | P(improve)=0.0000 | DM-HAC p=7.7381e-09 | bootstrap=reference_better
+tree_vs_arima            H6  | LGB01 vs ARIMA(6,1,12) | improvement=-29.1389 Mbit/s | CI=[-38.7705, -20.1379] | P(improve)=0.0000 | DM-HAC p=3.14391e-09 | bootstrap=reference_better
+tree_vs_arima            H12 | LGB01 vs ARIMA(6,1,12) | improvement=-30.3045 Mbit/s | CI=[-42.3025, -18.2729] | P(improve)=0.0000 | DM-HAC p=2.09481e-06 | bootstrap=reference_better
+tree_vs_var              H1  | LGB01 vs VAR(5) | improvement=-9.3842 Mbit/s | CI=[-13.6222, -5.6246] | P(improve)=0.0000 | DM-HAC p=7.98389e-06 | bootstrap=reference_better
+tree_vs_var              H3  | LGB01 vs VAR(5) | improvement=-21.0904 Mbit/s | CI=[-28.1950, -14.3642] | P(improve)=0.0000 | DM-HAC p=5.77266e-09 | bootstrap=reference_better
+tree_vs_var              H6  | LGB01 vs VAR(5) | improvement=-29.4653 Mbit/s | CI=[-39.1088, -19.8725] | P(improve)=0.0000 | DM-HAC p=2.58201e-09 | bootstrap=reference_better
+tree_vs_var              H12 | LGB01 vs VAR(5) | improvement=-30.4416 Mbit/s | CI=[-43.1604, -18.0328] | P(improve)=0.0000 | DM-HAC p=2.77515e-06 | bootstrap=reference_better
+xgb_vs_persistence       H1  | XGB06 vs persistence | improvement=-15.2289 Mbit/s | CI=[-21.3784, -9.5685] | P(improve)=0.0000 | DM-HAC p=1.46033e-06 | bootstrap=reference_better
+xgb_vs_persistence       H3  | XGB06 vs persistence | improvement=-29.7588 Mbit/s | CI=[-38.9304, -20.9851] | P(improve)=0.0000 | DM-HAC p=2.85053e-10 | bootstrap=reference_better
+xgb_vs_persistence       H6  | XGB06 vs persistence | improvement=-43.1782 Mbit/s | CI=[-54.0733, -32.6292] | P(improve)=0.0000 | DM-HAC p=1.30981e-14 | bootstrap=reference_better
+xgb_vs_persistence       H12 | XGB06 vs persistence | improvement=-32.2632 Mbit/s | CI=[-43.7609, -21.0846] | P(improve)=0.0000 | DM-HAC p=1.54129e-07 | bootstrap=reference_better
+
+RESIDUOS — RF01 / XGB06 / LGB01
+--------------------------------------------------------------------------------------------------------------------
+LGB01  H1  | bias=-17.194 Mbit/s | MAE=25.539 | under=25.91% | P95=68.040 Mbit/s
+LGB01  H3  | bias=-35.485 Mbit/s | MAE=40.316 | under=14.17% | P95=90.982 Mbit/s
+LGB01  H6  | bias=-48.408 Mbit/s | MAE=51.562 | under=9.72% | P95=107.534 Mbit/s
+LGB01  H12 | bias=-52.878 Mbit/s | MAE=56.992 | under=11.68% | P95=127.120 Mbit/s
+RF01   H1  | bias=-16.550 Mbit/s | MAE=24.018 | under=25.25% | P95=66.407 Mbit/s
+RF01   H3  | bias=-33.777 Mbit/s | MAE=38.868 | under=14.83% | P95=90.591 Mbit/s
+RF01   H6  | bias=-52.823 Mbit/s | MAE=56.034 | under=9.21% | P95=115.247 Mbit/s
+RF01   H12 | bias=-57.280 Mbit/s | MAE=61.055 | under=8.63% | P95=120.617 Mbit/s
+XGB06  H1  | bias=-26.405 Mbit/s | MAE=32.528 | under=20.10% | P95=82.805 Mbit/s
+XGB06  H3  | bias=-47.489 Mbit/s | MAE=51.043 | under=10.50% | P95=112.730 Mbit/s
+XGB06  H6  | bias=-65.063 Mbit/s | MAE=67.071 | under=6.03% | P95=125.783 Mbit/s
+XGB06  H12 | bias=-55.670 Mbit/s | MAE=60.141 | under=12.01% | P95=120.786 Mbit/s
+
+REGRESIÓN HACIA LA MEDIA — DIAGNÓSTICO DESCRIPTIVO
+--------------------------------------------------------------------------------------------------------------------
+LGB01  H1  | Q1 bias=-48.280 | Q4 bias=+9.673 | pattern=True | amplitude_ratio=0.4226
+LGB01  H3  | Q1 bias=-72.634 | Q4 bias=+1.143 | pattern=True | amplitude_ratio=0.2662
+LGB01  H6  | Q1 bias=-88.150 | Q4 bias=-6.457 | pattern=False | amplitude_ratio=0.1838
+LGB01  H12 | Q1 bias=-100.706 | Q4 bias=-3.835 | pattern=False | amplitude_ratio=0.0330
+RF01   H1  | Q1 bias=-45.653 | Q4 bias=+6.918 | pattern=True | amplitude_ratio=0.4762
+RF01   H3  | Q1 bias=-71.563 | Q4 bias=+2.310 | pattern=True | amplitude_ratio=0.2652
+RF01   H6  | Q1 bias=-95.802 | Q4 bias=-7.426 | pattern=False | amplitude_ratio=0.1171
+RF01   H12 | Q1 bias=-102.334 | Q4 bias=-5.708 | pattern=False | amplitude_ratio=0.0354
+XGB06  H1  | Q1 bias=-60.989 | Q4 bias=+5.803 | pattern=True | amplitude_ratio=0.3345
+XGB06  H3  | Q1 bias=-89.662 | Q4 bias=-3.830 | pattern=False | amplitude_ratio=0.1463
+XGB06  H6  | Q1 bias=-107.029 | Q4 bias=-14.253 | pattern=False | amplitude_ratio=0.0731
+XGB06  H12 | Q1 bias=-100.401 | Q4 bias=-3.231 | pattern=False | amplitude_ratio=0.0300
+
+CAUTELAS
+--------------------------------------------------------------------------------------------------------------------
+- Los p-values son no ajustados; no se añade corrección múltiple post hoc.
+- Los diagnósticos residuales no pueden emplearse para retuning.
+- El ranking June no redefine TREE*.
+- Los cuartiles de tráfico se calculan por horizonte sobre y_true común.
+- La regresión hacia la media es un diagnóstico descriptivo, no una atribución causal.
+- El segmento observado/predicho se fija como las primeras 24 h de H1; no se selecciona por rendimiento.
+
+STATUS: PASS
+TREE-CLOSURE-001: NOT RUN

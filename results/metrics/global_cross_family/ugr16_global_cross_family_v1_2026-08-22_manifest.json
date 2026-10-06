@@ -1,0 +1,3125 @@
+{
+  "campaign_id": "GLOBAL-CROSS-FAMILY-ANALYSIS-001",
+  "parent_campaign_id": "UGR16-GLOBAL-CROSS-FAMILY-001",
+  "status": "PASS",
+  "created_utc": "2026-08-22T16:45:27.288618+00:00",
+  "runner": {
+    "version": "1.0.0",
+    "path": "<PROJECT_ROOT>/src/evaluation/analyze_global_cross_family_v1_2026-08-22.py",
+    "sha256": "5f37314a50ea754baa5aeedcb9d605a5118449ade1ccc9d960f8bfea56527852"
+  },
+  "runtime": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
+    "elapsed_seconds": 11.113774226003443
+  },
+  "governance": {
+    "protocol_049_sha256": "755b54107cdf541e3fe01ed15731ac630ad0a2d91c5f7def3edd86baf9659917",
+    "preflight_closure_050_sha256": "5c4aac6a81d32d1e695a07cfc6e2bd5965be271e0c731bfbf67f557a74e6dea9",
+    "training": false,
+    "refit": false,
+    "tuning": false,
+    "selection": false,
+    "reselection": false,
+    "new_bootstrap_executions": 0,
+    "new_dm_hac_executions": 0,
+    "source_predictions_modified": false,
+    "creates_global_star": false,
+    "phase_g_authorized": false
+  },
+  "design": {
+    "models": [
+      "Persistence",
+      "ARIMA*",
+      "VAR*",
+      "TREE*",
+      "RECURRENT*",
+      "TRANSFORMER*"
+    ],
+    "horizons": [
+      1,
+      3,
+      6,
+      12
+    ],
+    "expected_counts": {
+      "1": 602,
+      "3": 600,
+      "6": 597,
+      "12": 591
+    },
+    "aligned_rows": 14340,
+    "mase_scale_bps": 23463132.548712824,
+    "primary_pairs": 15,
+    "primary_pair_horizon_rows": 60,
+    "sensitivity_rows": 180,
+    "bootstrap_primary_block": 12,
+    "bootstrap_sensitivity_blocks": [
+      6,
+      12,
+      24
+    ],
+    "multiple_testing_correction": "NONE / historical unadjusted p-values"
+  },
+  "validation": {
+    "global_metrics_rows_24": true,
+    "global_model_summary_rows_6": true,
+    "global_pairwise_primary_rows_60": true,
+    "global_pairwise_sensitivity_rows_180": true,
+    "dominance_by_horizon_rows_24": true,
+    "dominance_overall_rows_6": true,
+    "residual_summary_rows_24": true,
+    "residual_distribution_rows_24": true,
+    "traffic_thresholds_rows_4": true,
+    "traffic_level_rows_96": true,
+    "hourly_rows_576": true,
+    "residual_acf_rows_1152": true,
+    "worst_intervals_rows_120": true,
+    "stability_inventory_rows_6": true,
+    "cost_inventory_rows_6": true,
+    "aligned_predictions_rows_14340": true,
+    "all_60_mean_differentials_reconciled": true,
+    "figure_files_16": true,
+    "source_stat_predictions_unchanged": true,
+    "source_tree_predictions_unchanged": true,
+    "source_recurrent_predictions_unchanged": true,
+    "source_transformer_predictions_unchanged": true,
+    "aligned_predictions_unchanged": true,
+    "new_training_false": true,
+    "new_bootstrap_false": true,
+    "new_dm_hac_false": true
+  },
+  "sensitivity_class_counts": {
+    "strictly_consistent": 58,
+    "weakened_not_reversed": 2
+  },
+  "outputs": {
+    "global_metrics": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_01_global_metrics.csv",
+      "sha256": "0384dbd922d5f2710844e7a6d6163e6df8e1b7d9360820e27952394305468d94",
+      "bytes": 8066
+    },
+    "global_model_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_02_global_model_summary.csv",
+      "sha256": "5a02c2fcbbd366d98a0e08d0207c25a0689e6041fbe2c5f37a164d5cd24ea752",
+      "bytes": 742
+    },
+    "global_pairwise_primary": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_03_global_pairwise_primary.csv",
+      "sha256": "a26f7c9e7267696d5f8fc732cfa5ed90d90f9e94b1c6f893e6e4588299379fd3",
+      "bytes": 29098
+    },
+    "global_pairwise_sensitivity": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_04_global_pairwise_sensitivity.csv",
+      "sha256": "bc937a5769019b6243ae3d683117377f8774384c2e7008f6366a12817a9406a7",
+      "bytes": 70439
+    },
+    "dominance_by_horizon": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_05_dominance_by_horizon.csv",
+      "sha256": "cf92293bc4e4635bbe85e6080777c1b172ae234d0ea7f1994c248cb83c87b55f",
+      "bytes": 666
+    },
+    "dominance_overall": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_06_dominance_overall.csv",
+      "sha256": "d436e4a27e855b9f23cb353004fbd5b956ee6a09cc90bcf5c3603b7c879d5742",
+      "bytes": 186
+    },
+    "residual_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_07_residual_summary.csv",
+      "sha256": "2d35247c9919f26ddc0e7fa9fe5a6b8dfb32e77ac63ec5a16e4d0b5b1f7db487",
+      "bytes": 3251
+    },
+    "residual_distribution": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_08_residual_distribution.csv",
+      "sha256": "3db5d13cf90a63674c64576542ec5a3dacc1dadf33be2f2a1822dc3c42b55d72",
+      "bytes": 5155
+    },
+    "traffic_thresholds": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_09_traffic_thresholds.csv",
+      "sha256": "2922adae0531b23799438d70d08a768cfde08d909c270d0da237a2df9ea3818c",
+      "bytes": 523
+    },
+    "traffic_level": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_10_traffic_level.csv",
+      "sha256": "a810656d987a062be7d086318208a7dd5904eb67c41c30a00dbd3a5debd38214",
+      "bytes": 9645
+    },
+    "hourly": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_11_hourly.csv",
+      "sha256": "7ef317eb98143f8a3b1b94b2f8943256aa232839c7ab507a1b70186a2f30dbdc",
+      "bytes": 52151
+    },
+    "residual_acf": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_12_residual_acf.csv",
+      "sha256": "df5729f8a1988cb4469367e405688b1297bdfca61fb755bcae5398294e26acdb",
+      "bytes": 49307
+    },
+    "worst_intervals": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_13_worst_intervals.csv",
+      "sha256": "61eadd109e5a0d49164175e1cf25b3a709f274a8dd7fed5ee6e639072575b9c5",
+      "bytes": 13500
+    },
+    "stability_inventory": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_14_stability_inventory.csv",
+      "sha256": "5b2e3bacb09972f87b2e2d16b9186a0549a57ee0cd035d7963de3824aa13d60d",
+      "bytes": 1987
+    },
+    "cost_inventory": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_15_cost_inventory.csv",
+      "sha256": "6433ce60292f71cb1f34a3695a4eb8cfb708dfb6a75e590865db5f4fb35a3322",
+      "bytes": 1967
+    },
+    "source_provenance": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_16_source_provenance.csv",
+      "sha256": "f2a682ceba4ad8dc50ffa556fa7dfa07b911d21649d0beecbf9cef3b3e5b5b9c",
+      "bytes": 8671
+    },
+    "aligned_predictions": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_17_aligned_predictions.parquet",
+      "sha256": "a4a84b409bb1b17c3ca4259ae9902fb0c1da557479faae6bdb0b1241b6d47075",
+      "bytes": 436557
+    },
+    "report": {
+      "path": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_report.txt",
+      "sha256": "e5c3d8b3fe1a003bad2e967931c6b10e083c831e0a4d85146a401af1f954de4c",
+      "bytes": 3283
+    }
+  },
+  "figures": [
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_01_mae_by_horizon.pdf",
+      "sha256": "b471886e790b85ec3f01469dbb812359aa6c7754b1cccc1136015dda28a02a5a",
+      "bytes": 20538
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_01_mae_by_horizon.png",
+      "sha256": "bc0252391cb02cb2c630fcead9126472a5c437dfb8ea9f0675c108d14088077b",
+      "bytes": 118598
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_02_ratio_skill_vs_persistence.pdf",
+      "sha256": "a765e25dcad3c298e1bb344c5fe49d44cc3018a922c96e9381ea7ca4ba113063",
+      "bytes": 20585
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_02_ratio_skill_vs_persistence.png",
+      "sha256": "ecd27d169b2fba76df390ee46414814d5a758a074e67a5e295d715322b3820cf",
+      "bytes": 100762
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_03_global_score_mean_rank.pdf",
+      "sha256": "ba51db39d2c000b1c371e4d7e9a6e012f1e82f4963186a0fa8e0e0b1bee3721e",
+      "bytes": 19270
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_03_global_score_mean_rank.png",
+      "sha256": "0b2978b798909ffa21d7fd17fc89ca9c465f94b969548ddbece129abbb380574",
+      "bytes": 57953
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_04_primary_direction_matrix.pdf",
+      "sha256": "efb2f0ab9feb425bae6b6f8d6771be017f5c1ebcd4645256d803fc12d7962381",
+      "bytes": 21053
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_04_primary_direction_matrix.png",
+      "sha256": "9460500027f7a5eeab723b8dc3423696a00ff457470a35eabfcda48c27a3cdc9",
+      "bytes": 104501
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_05_bootstrap_sensitivity_global.pdf",
+      "sha256": "cc38b9003862adf0c825b4736e3d82cf1741d78612b9c94be0212ea8654d3256",
+      "bytes": 15990
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_05_bootstrap_sensitivity_global.png",
+      "sha256": "accfb1305619e4803d57b7edc5a40be4a75effb32fd64538c225e388243c8fac",
+      "bytes": 59820
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_06_p95_absolute_error.pdf",
+      "sha256": "44e39b67e58c1764c77e96d55ae7b092a1b976f73e4d5f267882c48b080d7f12",
+      "bytes": 21719
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_06_p95_absolute_error.png",
+      "sha256": "82ee6490a48b971233b06385a5a518dfc1df5117ee691c7614231b2b4543ab8c",
+      "bytes": 124018
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_07_bias_by_horizon.pdf",
+      "sha256": "df5616a3ab18f36e90afa08bc3dbdc8af2e57cbef9be7b28378dc4231db67551",
+      "bytes": 21699
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_07_bias_by_horizon.png",
+      "sha256": "9ef3e77946b954c772d96a8dba332b4df290fd612a7188dba3193394faa9fd86",
+      "bytes": 107747
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_08_residual_acf_summary.pdf",
+      "sha256": "6c76d7f5f15467d8667c41ee2b7180e5c98b7f8c2d83a1d4e150e077335458b4",
+      "bytes": 23347
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_08_residual_acf_summary.png",
+      "sha256": "64e525017311c3a00914adac0ca8f7aa99e3c3a66bb2f6fcced35deddfed1e05",
+      "bytes": 129698
+    }
+  ],
+  "all_runtime_checks": [
+    {
+      "name": "Governance 049: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/049_phase_f_global_cross_family_protocol_2026-08-22.md"
+    },
+    {
+      "name": "Governance 049: SHA-256",
+      "pass": true,
+      "detail": "755b54107cdf541e3fe01ed15731ac630ad0a2d91c5f7def3edd86baf9659917"
+    },
+    {
+      "name": "Governance 050: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/050_global_cross_family_preflight_closure_2026-08-22.md"
+    },
+    {
+      "name": "Governance 050: SHA-256",
+      "pass": true,
+      "detail": "5c4aac6a81d32d1e695a07cfc6e2bd5965be271e0c731bfbf67f557a74e6dea9"
+    },
+    {
+      "name": "Governance 010: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/010_statistical_models_closure_freeze_2026-08-17.md"
+    },
+    {
+      "name": "Governance 010: SHA-256",
+      "pass": true,
+      "detail": "aeb527f1c7966cb91aeececd67d2da8e1f114236608e09296d9885ad1de0f530"
+    },
+    {
+      "name": "Governance 022: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/022_tree_phase_c_closure_2026-08-20.md"
+    },
+    {
+      "name": "Governance 022: SHA-256",
+      "pass": true,
+      "detail": "fc8037337a5835c153f42f0f4eb53ef95cb25f7e6562b5aa65ff3e327c543de2"
+    },
+    {
+      "name": "Governance 029: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/029_recurrent_inference_residuals_closure_2026-08-21.md"
+    },
+    {
+      "name": "Governance 029: SHA-256",
+      "pass": true,
+      "detail": "ad1d3795cce0d126bc47ce4527988ef708daa148943bd35c3e4315c4e7c3bc40"
+    },
+    {
+      "name": "Governance 030: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/030_recurrent_phase_d_closure_2026-08-21.md"
+    },
+    {
+      "name": "Governance 030: SHA-256",
+      "pass": true,
+      "detail": "dbfeaba10c0d1360f2fdd971b5f381df730cbc6deab0a11c5da6d42fade89db9"
+    },
+    {
+      "name": "Governance 046: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/046_transformer_inference_residuals_closure_2026-08-22.md"
+    },
+    {
+      "name": "Governance 046: SHA-256",
+      "pass": true,
+      "detail": "9ce0f6d8237aae2f7cdda3852c7c0ddef01216b4e707e997b9d91c53a69f3eba"
+    },
+    {
+      "name": "Governance 047: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/047_transformer_phase_e_closure_2026-08-22.md"
+    },
+    {
+      "name": "Governance 047: SHA-256",
+      "pass": true,
+      "detail": "c46a51b12b7f8cea962bc282cd0451d6c6634d28ccceed3371ad8a2a331219c9"
+    },
+    {
+      "name": "Governance 048: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/docs/project_governance/048_live_packages_v0_3_checkpoint_closure_2026-08-22.md"
+    },
+    {
+      "name": "Governance 048: SHA-256",
+      "pass": true,
+      "detail": "93c89fd6f78397f0d7df557b24106aa038fb21e2d0a6d5b03a64171472fe8ea9"
+    },
+    {
+      "name": "Frozen preflight console: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/global_cross_family_preflight_console_v1_2026-08-22.txt"
+    },
+    {
+      "name": "Frozen preflight console: SHA-256",
+      "pass": true,
+      "detail": "c1f588bf6743d0d3018a1ea208932e0e806ea25c09860ecbe04a635da26aec8a"
+    },
+    {
+      "name": "Frozen preflight registry: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/preflight/v1_2026-08-22/global_cross_family_preflight_registry_v1_2026-08-22.json"
+    },
+    {
+      "name": "Frozen preflight registry: SHA-256",
+      "pass": true,
+      "detail": "17fc4e6d01c867018e57543c82f5392e375fe90685d44d83bfd66f6614c83bde"
+    },
+    {
+      "name": "Frozen preflight report: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/preflight/v1_2026-08-22/global_cross_family_preflight_report_v1_2026-08-22.txt"
+    },
+    {
+      "name": "Frozen preflight report: SHA-256",
+      "pass": true,
+      "detail": "bb609699ab8973215730c5e79d8a5d3766804fa2f25a1d30cb7f6ed902570de8"
+    },
+    {
+      "name": "Frozen preflight manifest: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/preflight/v1_2026-08-22/global_cross_family_preflight_manifest_v1_2026-08-22.json"
+    },
+    {
+      "name": "Frozen preflight manifest: SHA-256",
+      "pass": true,
+      "detail": "78f70e39565420dbaa8423552d6fb81ac7964c4b70348fb13fc99ff4dc2c0eaf"
+    },
+    {
+      "name": "June dataset: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/data/processed/ugr16/june_week3_prepared_5min.parquet"
+    },
+    {
+      "name": "June dataset: SHA-256",
+      "pass": true,
+      "detail": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3"
+    },
+    {
+      "name": "Frozen source stat_predictions: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/predictions/ugr16_statistical_june_blind_predictions.parquet"
+    },
+    {
+      "name": "Frozen source stat_predictions: SHA-256",
+      "pass": true,
+      "detail": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353"
+    },
+    {
+      "name": "Frozen source tree_predictions: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/predictions/tree_ensembles/ugr16_tree_june_blind_predictions.parquet"
+    },
+    {
+      "name": "Frozen source tree_predictions: SHA-256",
+      "pass": true,
+      "detail": "7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad"
+    },
+    {
+      "name": "Frozen source recurrent_predictions: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/recurrent_networks/june_blind/RECURRENT_JUNE_BLIND_001_RESULTS_V1_2026-08-21/ugr16_recurrent_june_blind_v1_2026-08-21_predictions.parquet"
+    },
+    {
+      "name": "Frozen source recurrent_predictions: SHA-256",
+      "pass": true,
+      "detail": "a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19"
+    },
+    {
+      "name": "Frozen source transformer_predictions: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/transformer_lite/june_blind/v2_2026-08-22/recovered_outputs/ugr16_transformer_june_blind_predictions_v2_2026-08-22.parquet"
+    },
+    {
+      "name": "Frozen source transformer_predictions: SHA-256",
+      "pass": true,
+      "detail": "7195fd3c656a0f34a40a8bbc29d262593c9de8fff6c4f3bc4c2c0b90c11cf750"
+    },
+    {
+      "name": "Frozen source aligned_predictions: exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_aligned_predictions.parquet"
+    },
+    {
+      "name": "Frozen source aligned_predictions: SHA-256",
+      "pass": true,
+      "detail": "a4a84b409bb1b17c3ca4259ae9902fb0c1da557479faae6bdb0b1241b6d47075"
+    },
+    {
+      "name": "Metrics output directory absent",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22"
+    },
+    {
+      "name": "Figures output directory absent",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/figures/global_cross_family/v1_2026-08-22"
+    },
+    {
+      "name": "Registry SHA already verified",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Registry status PASS",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Registry artifact count = 8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Registry unique source ids = 8",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Aligned SHA already verified",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Aligned required schema",
+      "pass": true,
+      "detail": "[]"
+    },
+    {
+      "name": "Aligned rows = 14340",
+      "pass": true,
+      "detail": "14340"
+    },
+    {
+      "name": "Aligned model set exact",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Aligned unique model/horizon/target keys",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Persistence H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Persistence H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Persistence H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Persistence H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "ARIMA* H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "ARIMA* H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "ARIMA* H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "ARIMA* H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "VAR* H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "VAR* H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "VAR* H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "VAR* H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "TREE* H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "TREE* H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "TREE* H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "TREE* H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "RECURRENT* H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "RECURRENT* H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "RECURRENT* H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "RECURRENT* H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "TRANSFORMER* H1 coverage",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "TRANSFORMER* H3 coverage",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "TRANSFORMER* H6 coverage",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "TRANSFORMER* H12 coverage",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Truth alignment ARIMA* H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment VAR* H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TREE* H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment RECURRENT* H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TRANSFORMER* H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment ARIMA* H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment VAR* H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TREE* H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment RECURRENT* H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TRANSFORMER* H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment ARIMA* H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment VAR* H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TREE* H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment RECURRENT* H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TRANSFORMER* H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment ARIMA* H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment VAR* H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TREE* H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment RECURRENT* H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Truth alignment TRANSFORMER* H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "June rows = 2004",
+      "pass": true,
+      "detail": "2004"
+    },
+    {
+      "name": "June target column",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "June timestamp column",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "June common MASE scale finite",
+      "pass": true,
+      "detail": "23463132.548712824"
+    },
+    {
+      "name": "phase_b_primary exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/ugr16_statistical_june_inference_residuals_paired_inference.csv"
+    },
+    {
+      "name": "phase_b_primary SHA",
+      "pass": true,
+      "detail": "47d9dee85c0504427dede97f743066927e8bf04a03a4165ba71791f74aeba612"
+    },
+    {
+      "name": "phase_b_primary selected rows",
+      "pass": true,
+      "detail": "12"
+    },
+    {
+      "name": "phase_b_sensitivity exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/ugr16_statistical_june_inference_residuals_bootstrap_sensitivity.csv"
+    },
+    {
+      "name": "phase_b_sensitivity SHA",
+      "pass": true,
+      "detail": "349b94fe6de9be6ad85452244b23f26ab2de6537769495a6f4c221375f22fa3e"
+    },
+    {
+      "name": "phase_b_sensitivity selected rows",
+      "pass": true,
+      "detail": "36"
+    },
+    {
+      "name": "phase_c_primary exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_paired_inference.csv"
+    },
+    {
+      "name": "phase_c_primary SHA",
+      "pass": true,
+      "detail": "d630907b55631bf6a3ea9664806b0a8eb300b97a5fd00a02b134543debf2bbf9"
+    },
+    {
+      "name": "phase_c_primary selected rows",
+      "pass": true,
+      "detail": "12"
+    },
+    {
+      "name": "phase_c_sensitivity exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_bootstrap_sensitivity.csv"
+    },
+    {
+      "name": "phase_c_sensitivity SHA",
+      "pass": true,
+      "detail": "bb8e17e3d10aef31f41f462e3eb1b73c700be81bc81ca199b7b30a31e1a9349b"
+    },
+    {
+      "name": "phase_c_sensitivity selected rows",
+      "pass": true,
+      "detail": "36"
+    },
+    {
+      "name": "phase_d_primary exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/recurrent_networks/inference_residuals/v1_2026-08-21/ugr16_recurrent_inference_residuals_v1_2026-08-21_primary_inference.csv"
+    },
+    {
+      "name": "phase_d_primary SHA",
+      "pass": true,
+      "detail": "50f1c63803a71d6ba218f9578686acd5683d8b05604f7d028642a2a4e0fc590a"
+    },
+    {
+      "name": "phase_d_primary selected rows",
+      "pass": true,
+      "detail": "16"
+    },
+    {
+      "name": "phase_d_sensitivity exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/recurrent_networks/inference_residuals/v1_2026-08-21/ugr16_recurrent_inference_residuals_v1_2026-08-21_bootstrap_sensitivity.csv"
+    },
+    {
+      "name": "phase_d_sensitivity SHA",
+      "pass": true,
+      "detail": "0106709ffc4258fb75ace33987caafed4a5bc642a56ea710077d11cd3362fdf5"
+    },
+    {
+      "name": "phase_d_sensitivity selected rows",
+      "pass": true,
+      "detail": "48"
+    },
+    {
+      "name": "phase_e_primary exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_primary_inference.csv"
+    },
+    {
+      "name": "phase_e_primary SHA",
+      "pass": true,
+      "detail": "21f68c92214bd23ba005f1b89ed614bb5a3d9ff636afe3a1893ebba2a7f02e93"
+    },
+    {
+      "name": "phase_e_primary selected rows",
+      "pass": true,
+      "detail": "20"
+    },
+    {
+      "name": "phase_e_sensitivity exists",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_bootstrap_sensitivity.csv"
+    },
+    {
+      "name": "phase_e_sensitivity SHA",
+      "pass": true,
+      "detail": "b685d8a96b623f70d9221b810c05731e73c90ec348aebb5ddb0f23803dc84ea3"
+    },
+    {
+      "name": "phase_e_sensitivity selected rows",
+      "pass": true,
+      "detail": "60"
+    },
+    {
+      "name": "Primary historical rows = 60",
+      "pass": true,
+      "detail": "60"
+    },
+    {
+      "name": "Sensitivity historical rows = 180",
+      "pass": true,
+      "detail": "180"
+    },
+    {
+      "name": "Primary comparisons exact = 15",
+      "pass": true,
+      "detail": "['arima_vs_persistence', 'gru_vs_persistence', 'lgbm_vs_persistence', 'recurrent_vs_arima', 'recurrent_vs_tree', 'recurrent_vs_var', 'transformer_vs_arima', 'transformer_vs_persistence', 'transformer_vs_recurrent', 'transformer_vs_tree', 'transformer_vs_var', 'tree_vs_arima', 'tree_vs_var', 'var_vs_arima', 'var_vs_persistence']"
+    },
+    {
+      "name": "Primary blocks all B12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Sensitivity blocks all 6/12/24",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Primary pair/horizon unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Sensitivity pair/horizon/block unique",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage arima_vs_persistence H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth arima_vs_persistence H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage arima_vs_persistence H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth arima_vs_persistence H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage arima_vs_persistence H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth arima_vs_persistence H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage arima_vs_persistence H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth arima_vs_persistence H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_persistence H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth var_vs_persistence H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_persistence H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth var_vs_persistence H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_persistence H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth var_vs_persistence H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_persistence H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth var_vs_persistence H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_arima H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth var_vs_arima H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_arima H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth var_vs_arima H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_arima H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth var_vs_arima H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage var_vs_arima H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth var_vs_arima H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage lgbm_vs_persistence H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth lgbm_vs_persistence H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage lgbm_vs_persistence H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth lgbm_vs_persistence H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage lgbm_vs_persistence H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth lgbm_vs_persistence H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage lgbm_vs_persistence H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth lgbm_vs_persistence H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_arima H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth tree_vs_arima H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_arima H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth tree_vs_arima H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_arima H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth tree_vs_arima H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_arima H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth tree_vs_arima H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_var H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth tree_vs_var H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_var H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth tree_vs_var H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_var H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth tree_vs_var H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage tree_vs_var H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth tree_vs_var H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage gru_vs_persistence H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth gru_vs_persistence H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage gru_vs_persistence H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth gru_vs_persistence H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage gru_vs_persistence H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth gru_vs_persistence H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage gru_vs_persistence H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth gru_vs_persistence H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_arima H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth recurrent_vs_arima H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_arima H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth recurrent_vs_arima H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_arima H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth recurrent_vs_arima H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_arima H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth recurrent_vs_arima H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_var H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth recurrent_vs_var H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_var H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth recurrent_vs_var H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_var H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth recurrent_vs_var H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_var H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth recurrent_vs_var H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_tree H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth recurrent_vs_tree H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_tree H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth recurrent_vs_tree H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_tree H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth recurrent_vs_tree H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage recurrent_vs_tree H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth recurrent_vs_tree H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_persistence H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth transformer_vs_persistence H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_persistence H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth transformer_vs_persistence H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_persistence H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth transformer_vs_persistence H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_persistence H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth transformer_vs_persistence H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_arima H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth transformer_vs_arima H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_arima H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth transformer_vs_arima H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_arima H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth transformer_vs_arima H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_arima H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth transformer_vs_arima H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_var H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth transformer_vs_var H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_var H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth transformer_vs_var H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_var H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth transformer_vs_var H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_var H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth transformer_vs_var H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_tree H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth transformer_vs_tree H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_tree H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth transformer_vs_tree H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_tree H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth transformer_vs_tree H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_tree H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth transformer_vs_tree H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_recurrent H1",
+      "pass": true,
+      "detail": "602"
+    },
+    {
+      "name": "Pair truth transformer_vs_recurrent H1",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_recurrent H3",
+      "pass": true,
+      "detail": "600"
+    },
+    {
+      "name": "Pair truth transformer_vs_recurrent H3",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_recurrent H6",
+      "pass": true,
+      "detail": "597"
+    },
+    {
+      "name": "Pair truth transformer_vs_recurrent H6",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Pair coverage transformer_vs_recurrent H12",
+      "pass": true,
+      "detail": "591"
+    },
+    {
+      "name": "Pair truth transformer_vs_recurrent H12",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Mean differential reconcile arima_vs_persistence H1",
+      "pass": true,
+      "detail": "recomputed=1099559.516629930120 historical=1099559.516629929887 delta=2.32830643654e-10"
+    },
+    {
+      "name": "Mean differential reconcile arima_vs_persistence H3",
+      "pass": true,
+      "detail": "recomputed=1794849.651501502143 historical=1794849.651501502143 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile arima_vs_persistence H6",
+      "pass": true,
+      "detail": "recomputed=1469844.023526533274 historical=1469844.023526533041 delta=2.32830643654e-10"
+    },
+    {
+      "name": "Mean differential reconcile arima_vs_persistence H12",
+      "pass": true,
+      "detail": "recomputed=1190194.744587161345 historical=1190194.744587161345 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile gru_vs_persistence H1",
+      "pass": true,
+      "detail": "recomputed=-2793227.352742120624 historical=-2793227.352742120624 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile gru_vs_persistence H3",
+      "pass": true,
+      "detail": "recomputed=-1492182.704913747730 historical=-1492182.704913747497 delta=-2.32830643654e-10"
+    },
+    {
+      "name": "Mean differential reconcile gru_vs_persistence H6",
+      "pass": true,
+      "detail": "recomputed=-15003325.065042687580 historical=-15003325.065042687580 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile gru_vs_persistence H12",
+      "pass": true,
+      "detail": "recomputed=-23813584.583798095584 historical=-23813584.583798095584 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile lgbm_vs_persistence H1",
+      "pass": true,
+      "detail": "recomputed=-8240402.682673457079 historical=-8240402.682673457079 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile lgbm_vs_persistence H3",
+      "pass": true,
+      "detail": "recomputed=-19031695.102882273495 historical=-19031695.102882277220 delta=3.72529029846e-09"
+    },
+    {
+      "name": "Mean differential reconcile lgbm_vs_persistence H6",
+      "pass": true,
+      "detail": "recomputed=-27669033.750657156110 historical=-27669033.750657159835 delta=3.72529029846e-09"
+    },
+    {
+      "name": "Mean differential reconcile lgbm_vs_persistence H12",
+      "pass": true,
+      "detail": "recomputed=-29114263.643629908562 historical=-29114263.643629908562 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_arima H1",
+      "pass": true,
+      "detail": "recomputed=-3892786.869372051209 historical=-3892786.869372051209 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_arima H3",
+      "pass": true,
+      "detail": "recomputed=-3287032.356415249873 historical=-3287032.356415249873 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_arima H6",
+      "pass": true,
+      "detail": "recomputed=-16473169.088569222018 historical=-16473169.088569222018 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_arima H12",
+      "pass": true,
+      "detail": "recomputed=-25003779.328385256231 historical=-25003779.328385256231 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_tree H1",
+      "pass": true,
+      "detail": "recomputed=5447175.329931335524 historical=5447175.329931336455 delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_tree H3",
+      "pass": true,
+      "detail": "recomputed=17539512.397968526930 historical=17539512.397968526930 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_tree H6",
+      "pass": true,
+      "detail": "recomputed=12665708.685614466667 historical=12665708.685614468530 delta=-1.86264514923e-09"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_tree H12",
+      "pass": true,
+      "detail": "recomputed=5300679.059831813909 historical=5300679.059831813909 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_var H1",
+      "pass": true,
+      "detail": "recomputed=-3937029.282048042398 historical=-3937029.282048041467 delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_var H3",
+      "pass": true,
+      "detail": "recomputed=-3550916.984840661753 historical=-3550916.984840661753 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_var H6",
+      "pass": true,
+      "detail": "recomputed=-16799603.072660781443 historical=-16799603.072660781443 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile recurrent_vs_var H12",
+      "pass": true,
+      "detail": "recomputed=-25140930.816523965448 historical=-25140930.816523965448 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_arima H1",
+      "pass": true,
+      "detail": "recomputed=-3568612.739646563306 historical=-3568612.739646563772 delta=4.65661287308e-10"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_arima H3",
+      "pass": true,
+      "detail": "recomputed=-4755055.153352447785 historical=-4755055.153352447785 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_arima H6",
+      "pass": true,
+      "detail": "recomputed=-8807324.459981426597 historical=-8807324.459981426597 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_arima H12",
+      "pass": true,
+      "detail": "recomputed=-10706598.588602691889 historical=-10706598.588602691889 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_persistence H1",
+      "pass": true,
+      "detail": "recomputed=-2469053.223016633652 historical=-2469053.223016633652 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_persistence H3",
+      "pass": true,
+      "detail": "recomputed=-2960205.501850944944 historical=-2960205.501850944944 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_persistence H6",
+      "pass": true,
+      "detail": "recomputed=-7337480.436454894021 historical=-7337480.436454894021 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_persistence H12",
+      "pass": true,
+      "detail": "recomputed=-9516403.844015531242 historical=-9516403.844015531242 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_recurrent H1",
+      "pass": true,
+      "detail": "recomputed=324174.129725488136 historical=324174.129725488136 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_recurrent H3",
+      "pass": true,
+      "detail": "recomputed=-1468022.796937197680 historical=-1468022.796937197680 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_recurrent H6",
+      "pass": true,
+      "detail": "recomputed=7665844.628587796353 historical=7665844.628587796353 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_recurrent H12",
+      "pass": true,
+      "detail": "recomputed=14297180.739782564342 historical=14297180.739782564342 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_tree H1",
+      "pass": true,
+      "detail": "recomputed=5771349.459656824358 historical=5771349.459656824358 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_tree H3",
+      "pass": true,
+      "detail": "recomputed=16071489.601031329483 historical=16071489.601031329483 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_tree H6",
+      "pass": true,
+      "detail": "recomputed=20331553.314202260226 historical=20331553.314202260226 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_tree H12",
+      "pass": true,
+      "detail": "recomputed=19597859.799614377320 historical=19597859.799614377320 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_var H1",
+      "pass": true,
+      "detail": "recomputed=-3612855.152322554495 historical=-3612855.152322554495 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_var H3",
+      "pass": true,
+      "detail": "recomputed=-5018939.781777858734 historical=-5018939.781777858734 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_var H6",
+      "pass": true,
+      "detail": "recomputed=-9133758.444072987884 historical=-9133758.444072987884 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile transformer_vs_var H12",
+      "pass": true,
+      "detail": "recomputed=-10843750.076741404831 historical=-10843750.076741404831 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_arima H1",
+      "pass": true,
+      "detail": "recomputed=-9339962.199303386733 historical=-9339962.199303388596 delta=1.86264514923e-09"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_arima H3",
+      "pass": true,
+      "detail": "recomputed=-20826544.754383776337 historical=-20826544.754383776337 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_arima H6",
+      "pass": true,
+      "detail": "recomputed=-29138877.774183686823 historical=-29138877.774183686823 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_arima H12",
+      "pass": true,
+      "detail": "recomputed=-30304458.388217069209 historical=-30304458.388217069209 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_var H1",
+      "pass": true,
+      "detail": "recomputed=-9384204.611979376525 historical=-9384204.611979376525 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_var H3",
+      "pass": true,
+      "detail": "recomputed=-21090429.382809188217 historical=-21090429.382809188217 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_var H6",
+      "pass": true,
+      "detail": "recomputed=-29465311.758275248110 historical=-29465311.758275248110 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile tree_vs_var H12",
+      "pass": true,
+      "detail": "recomputed=-30441609.876355785877 historical=-30441609.876355782151 delta=-3.72529029846e-09"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_arima H1",
+      "pass": true,
+      "detail": "recomputed=44242.412675991603 historical=44242.412675991596 delta=7.27595761418e-12"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_arima H3",
+      "pass": true,
+      "detail": "recomputed=263884.628425411647 historical=263884.628425411589 delta=5.82076609135e-11"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_arima H6",
+      "pass": true,
+      "detail": "recomputed=326433.984091559192 historical=326433.984091559192 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_arima H12",
+      "pass": true,
+      "detail": "recomputed=137151.488138710120 historical=137151.488138710090 delta=2.91038304567e-11"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_persistence H1",
+      "pass": true,
+      "detail": "recomputed=1143801.929305921774 historical=1143801.929305921774 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_persistence H3",
+      "pass": true,
+      "detail": "recomputed=2058734.279926913558 historical=2058734.279926913092 delta=4.65661287308e-10"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_persistence H6",
+      "pass": true,
+      "detail": "recomputed=1796278.007618092233 historical=1796278.007618092233 delta=0"
+    },
+    {
+      "name": "Mean differential reconcile var_vs_persistence H12",
+      "pass": true,
+      "detail": "recomputed=1327346.232725871494 historical=1327346.232725871494 delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H1 B6",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H1 B12",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H1 B24",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H6 B6",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H6 B12",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H6 B24",
+      "pass": true,
+      "detail": "delta=2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile arima_vs_persistence H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H3 B6",
+      "pass": true,
+      "detail": "delta=-2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H3 B12",
+      "pass": true,
+      "detail": "delta=-2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H3 B24",
+      "pass": true,
+      "detail": "delta=-2.32830643654e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile gru_vs_persistence H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H3 B6",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H3 B12",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H3 B24",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H6 B6",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H6 B12",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H6 B24",
+      "pass": true,
+      "detail": "delta=3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile lgbm_vs_persistence H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_arima H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H1 B6",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H1 B12",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H1 B24",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H6 B6",
+      "pass": true,
+      "detail": "delta=-1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H6 B12",
+      "pass": true,
+      "detail": "delta=-1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H6 B24",
+      "pass": true,
+      "detail": "delta=-1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_tree H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H1 B6",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H1 B12",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H1 B24",
+      "pass": true,
+      "detail": "delta=-9.31322574615e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile recurrent_vs_var H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H1 B6",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H1 B12",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H1 B24",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_arima H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_persistence H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_recurrent H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_tree H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile transformer_vs_var H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H1 B6",
+      "pass": true,
+      "detail": "delta=1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H1 B12",
+      "pass": true,
+      "detail": "delta=1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H1 B24",
+      "pass": true,
+      "detail": "delta=1.86264514923e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_arima H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H3 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H3 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H3 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H12 B6",
+      "pass": true,
+      "detail": "delta=-3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H12 B12",
+      "pass": true,
+      "detail": "delta=-3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile tree_vs_var H12 B24",
+      "pass": true,
+      "detail": "delta=-3.72529029846e-09"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H1 B6",
+      "pass": true,
+      "detail": "delta=7.27595761418e-12"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H1 B12",
+      "pass": true,
+      "detail": "delta=7.27595761418e-12"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H1 B24",
+      "pass": true,
+      "detail": "delta=7.27595761418e-12"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H3 B6",
+      "pass": true,
+      "detail": "delta=5.82076609135e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H3 B12",
+      "pass": true,
+      "detail": "delta=5.82076609135e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H3 B24",
+      "pass": true,
+      "detail": "delta=5.82076609135e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H12 B6",
+      "pass": true,
+      "detail": "delta=2.91038304567e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H12 B12",
+      "pass": true,
+      "detail": "delta=2.91038304567e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_arima H12 B24",
+      "pass": true,
+      "detail": "delta=2.91038304567e-11"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H1 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H1 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H1 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H3 B6",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H3 B12",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H3 B24",
+      "pass": true,
+      "detail": "delta=4.65661287308e-10"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H6 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H6 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H6 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H12 B6",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H12 B12",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Sensitivity mean reconcile var_vs_persistence H12 B24",
+      "pass": true,
+      "detail": "delta=0"
+    },
+    {
+      "name": "Global metric rows = 24",
+      "pass": true,
+      "detail": "24"
+    },
+    {
+      "name": "Global model summary rows = 6",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "name": "Dominance opponents Persistence H1",
+      "pass": true,
+      "detail": "3+2+0"
+    },
+    {
+      "name": "Dominance opponents ARIMA* H1",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents VAR* H1",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents TREE* H1",
+      "pass": true,
+      "detail": "0+5+0"
+    },
+    {
+      "name": "Dominance opponents RECURRENT* H1",
+      "pass": true,
+      "detail": "1+3+1"
+    },
+    {
+      "name": "Dominance opponents TRANSFORMER* H1",
+      "pass": true,
+      "detail": "1+3+1"
+    },
+    {
+      "name": "Dominance opponents Persistence H3",
+      "pass": true,
+      "detail": "2+2+1"
+    },
+    {
+      "name": "Dominance opponents ARIMA* H3",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents VAR* H3",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents TREE* H3",
+      "pass": true,
+      "detail": "0+5+0"
+    },
+    {
+      "name": "Dominance opponents RECURRENT* H3",
+      "pass": true,
+      "detail": "1+2+2"
+    },
+    {
+      "name": "Dominance opponents TRANSFORMER* H3",
+      "pass": true,
+      "detail": "1+3+1"
+    },
+    {
+      "name": "Dominance opponents Persistence H6",
+      "pass": true,
+      "detail": "3+1+1"
+    },
+    {
+      "name": "Dominance opponents ARIMA* H6",
+      "pass": true,
+      "detail": "3+0+2"
+    },
+    {
+      "name": "Dominance opponents VAR* H6",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents TREE* H6",
+      "pass": true,
+      "detail": "0+5+0"
+    },
+    {
+      "name": "Dominance opponents RECURRENT* H6",
+      "pass": true,
+      "detail": "1+4+0"
+    },
+    {
+      "name": "Dominance opponents TRANSFORMER* H6",
+      "pass": true,
+      "detail": "2+3+0"
+    },
+    {
+      "name": "Dominance opponents Persistence H12",
+      "pass": true,
+      "detail": "3+1+1"
+    },
+    {
+      "name": "Dominance opponents ARIMA* H12",
+      "pass": true,
+      "detail": "3+0+2"
+    },
+    {
+      "name": "Dominance opponents VAR* H12",
+      "pass": true,
+      "detail": "4+0+1"
+    },
+    {
+      "name": "Dominance opponents TREE* H12",
+      "pass": true,
+      "detail": "0+4+1"
+    },
+    {
+      "name": "Dominance opponents RECURRENT* H12",
+      "pass": true,
+      "detail": "0+4+1"
+    },
+    {
+      "name": "Dominance opponents TRANSFORMER* H12",
+      "pass": true,
+      "detail": "2+3+0"
+    },
+    {
+      "name": "Dominance by horizon rows = 24",
+      "pass": true,
+      "detail": "24"
+    },
+    {
+      "name": "Dominance overall rows = 6",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "name": "Dominance overall opponents = 20 each",
+      "pass": true,
+      "detail": "[20, 20, 20, 20, 20, 20]"
+    },
+    {
+      "name": "residual_summary rows = 24",
+      "pass": true,
+      "detail": "24"
+    },
+    {
+      "name": "residual_distribution rows = 24",
+      "pass": true,
+      "detail": "24"
+    },
+    {
+      "name": "traffic_thresholds rows = 4",
+      "pass": true,
+      "detail": "4"
+    },
+    {
+      "name": "traffic_level rows = 96",
+      "pass": true,
+      "detail": "96"
+    },
+    {
+      "name": "hourly rows = 576",
+      "pass": true,
+      "detail": "576"
+    },
+    {
+      "name": "residual_acf rows = 1152",
+      "pass": true,
+      "detail": "1152"
+    },
+    {
+      "name": "worst_intervals rows = 120",
+      "pass": true,
+      "detail": "120"
+    },
+    {
+      "name": "Stability inventory rows = 6",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "name": "Cost inventory rows = 6",
+      "pass": true,
+      "detail": "6"
+    },
+    {
+      "name": "Source provenance nonempty",
+      "pass": true,
+      "detail": "27"
+    },
+    {
+      "name": "Final global_metrics rows",
+      "pass": true,
+      "detail": "24/24"
+    },
+    {
+      "name": "Final global_model_summary rows",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "Final global_pairwise_primary rows",
+      "pass": true,
+      "detail": "60/60"
+    },
+    {
+      "name": "Final global_pairwise_sensitivity rows",
+      "pass": true,
+      "detail": "180/180"
+    },
+    {
+      "name": "Final dominance_by_horizon rows",
+      "pass": true,
+      "detail": "24/24"
+    },
+    {
+      "name": "Final dominance_overall rows",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "Final residual_summary rows",
+      "pass": true,
+      "detail": "24/24"
+    },
+    {
+      "name": "Final residual_distribution rows",
+      "pass": true,
+      "detail": "24/24"
+    },
+    {
+      "name": "Final traffic_thresholds rows",
+      "pass": true,
+      "detail": "4/4"
+    },
+    {
+      "name": "Final traffic_level rows",
+      "pass": true,
+      "detail": "96/96"
+    },
+    {
+      "name": "Final hourly rows",
+      "pass": true,
+      "detail": "576/576"
+    },
+    {
+      "name": "Final residual_acf rows",
+      "pass": true,
+      "detail": "1152/1152"
+    },
+    {
+      "name": "Final worst_intervals rows",
+      "pass": true,
+      "detail": "120/120"
+    },
+    {
+      "name": "Final stability_inventory rows",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "Final cost_inventory rows",
+      "pass": true,
+      "detail": "6/6"
+    },
+    {
+      "name": "Final aligned_predictions rows",
+      "pass": true,
+      "detail": "14340/14340"
+    },
+    {
+      "name": "All primary mean reconciliations TRUE",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Figure files = 16",
+      "pass": true,
+      "detail": "16"
+    },
+    {
+      "name": "All figure files exist",
+      "pass": true,
+      "detail": ""
+    },
+    {
+      "name": "Source unchanged after run: stat_predictions",
+      "pass": true,
+      "detail": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353"
+    },
+    {
+      "name": "Source unchanged after run: tree_predictions",
+      "pass": true,
+      "detail": "7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad"
+    },
+    {
+      "name": "Source unchanged after run: recurrent_predictions",
+      "pass": true,
+      "detail": "a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19"
+    },
+    {
+      "name": "Source unchanged after run: transformer_predictions",
+      "pass": true,
+      "detail": "7195fd3c656a0f34a40a8bbc29d262593c9de8fff6c4f3bc4c2c0b90c11cf750"
+    },
+    {
+      "name": "Source unchanged after run: aligned_predictions",
+      "pass": true,
+      "detail": "a4a84b409bb1b17c3ca4259ae9902fb0c1da557479faae6bdb0b1241b6d47075"
+    },
+    {
+      "name": "Output exists: global_metrics",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_01_global_metrics.csv"
+    },
+    {
+      "name": "Output exists: global_model_summary",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_02_global_model_summary.csv"
+    },
+    {
+      "name": "Output exists: global_pairwise_primary",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_03_global_pairwise_primary.csv"
+    },
+    {
+      "name": "Output exists: global_pairwise_sensitivity",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_04_global_pairwise_sensitivity.csv"
+    },
+    {
+      "name": "Output exists: dominance_by_horizon",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_05_dominance_by_horizon.csv"
+    },
+    {
+      "name": "Output exists: dominance_overall",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_06_dominance_overall.csv"
+    },
+    {
+      "name": "Output exists: residual_summary",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_07_residual_summary.csv"
+    },
+    {
+      "name": "Output exists: residual_distribution",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_08_residual_distribution.csv"
+    },
+    {
+      "name": "Output exists: traffic_thresholds",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_09_traffic_thresholds.csv"
+    },
+    {
+      "name": "Output exists: traffic_level",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_10_traffic_level.csv"
+    },
+    {
+      "name": "Output exists: hourly",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_11_hourly.csv"
+    },
+    {
+      "name": "Output exists: residual_acf",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_12_residual_acf.csv"
+    },
+    {
+      "name": "Output exists: worst_intervals",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_13_worst_intervals.csv"
+    },
+    {
+      "name": "Output exists: stability_inventory",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_14_stability_inventory.csv"
+    },
+    {
+      "name": "Output exists: cost_inventory",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_15_cost_inventory.csv"
+    },
+    {
+      "name": "Output exists: source_provenance",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_16_source_provenance.csv"
+    },
+    {
+      "name": "Output exists: aligned_predictions",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_17_aligned_predictions.parquet"
+    },
+    {
+      "name": "Output exists: report",
+      "pass": true,
+      "detail": "<PROJECT_ROOT>/results/metrics/global_cross_family/analysis/v1_2026-08-22/ugr16_global_cross_family_v1_2026-08-22_report.txt"
+    },
+    {
+      "name": "Manifest validation values all TRUE",
+      "pass": true,
+      "detail": "{'global_metrics_rows_24': True, 'global_model_summary_rows_6': True, 'global_pairwise_primary_rows_60': True, 'global_pairwise_sensitivity_rows_180': True, 'dominance_by_horizon_rows_24': True, 'dominance_overall_rows_6': True, 'residual_summary_rows_24': True, 'residual_distribution_rows_24': True, 'traffic_thresholds_rows_4': True, 'traffic_level_rows_96': True, 'hourly_rows_576': True, 'residual_acf_rows_1152': True, 'worst_intervals_rows_120': True, 'stability_inventory_rows_6': True, 'cost_inventory_rows_6': True, 'aligned_predictions_rows_14340': True, 'all_60_mean_differentials_reconciled': True, 'figure_files_16': True, 'source_stat_predictions_unchanged': True, 'source_tree_predictions_unchanged': True, 'source_recurrent_predictions_unchanged': True, 'source_transformer_predictions_unchanged': True, 'aligned_predictions_unchanged': True, 'new_training_false': True, 'new_bootstrap_false': True, 'new_dm_hac_false': True}"
+    }
+  ]
+}

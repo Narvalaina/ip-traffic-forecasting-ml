@@ -1,0 +1,72 @@
+==========================================================================================================================
+GLOBAL-CROSS-FAMILY-ANALYSIS-001 — REPORT
+==========================================================================================================================
+Runner version: 1.0.0
+Status: PASS
+
+GOBERNANZA
+--------------------------------------------------------------------------------------------------------------------------
+Training: 0
+Refit: 0
+Tuning: 0
+Selection / reselection: 0
+New bootstrap: 0
+New DM-HAC: 0
+Source predictions modified: NO
+Creates GLOBAL*: NO
+
+COBERTURA
+--------------------------------------------------------------------------------------------------------------------------
+Models: 6
+Aligned rows: 14340
+H1/H3/H6/H12: 602 / 600 / 597 / 591
+
+MÉTRICAS DESCRIPTIVAS
+--------------------------------------------------------------------------------------------------------------------------
+GlobalScore = mean_h(MAE_model,h / MAE_Persistence,h), descriptive only
+VAR*           GlobalScore=0.928589917 mean_MAE_rank=1.000 horizons_ratio<1=4
+ARIMA*         GlobalScore=0.936974372 mean_MAE_rank=2.000 horizons_ratio<1=4
+Persistence    GlobalScore=1.000000000 mean_MAE_rank=3.000 horizons_ratio<1=0
+TRANSFORMER*   GlobalScore=1.232567409 mean_MAE_rank=4.250 horizons_ratio<1=0
+RECURRENT*     GlobalScore=1.428432038 mean_MAE_rank=4.750 horizons_ratio<1=0
+TREE*          GlobalScore=1.893231677 mean_MAE_rank=6.000 horizons_ratio<1=0
+
+INFERENCIA HISTÓRICA INTEGRADA
+--------------------------------------------------------------------------------------------------------------------------
+Primary rows: 60
+Sensitivity rows: 180
+Primary direction counts: {'reference_better': 35, 'model_better': 15, 'not_distinguishable': 10}
+Sensitivity-class counts: {'strictly_consistent': 58, 'weakened_not_reversed': 2}
+All 60 historical mean differentials independently reconciled: YES
+P-values: historical, two-sided, unadjusted; multiplicity correction = NONE
+
+DOMINANCIA DIRECTA (20 comparaciones/modelo)
+--------------------------------------------------------------------------------------------------------------------------
+Persistence    wins=11 losses= 6 ND= 3
+ARIMA*         wins=14 losses= 0 ND= 6
+VAR*           wins=16 losses= 0 ND= 4
+TREE*          wins= 0 losses=19 ND= 1
+RECURRENT*     wins= 3 losses=13 ND= 4
+TRANSFORMER*   wins= 6 losses=12 ND= 2
+
+INMUTABILIDAD DE FUENTES
+--------------------------------------------------------------------------------------------------------------------------
+stat_predictions: PASS
+tree_predictions: PASS
+recurrent_predictions: PASS
+transformer_predictions: PASS
+aligned_predictions: PASS
+
+CAUTELAS
+--------------------------------------------------------------------------------------------------------------------------
+La comparación es entre pipelines congelados bajo el mismo June/target/horizonte.
+No todos los pipelines usan la misma representación de entrada.
+Los runtimes CPU/GPU se conservan como contexto ingenieril, no como ranking universal.
+GlobalScore es descriptivo y NO crea una identidad GLOBAL*.
+Phase G permanece NOT AUTHORIZED.
+
+Runtime Phase-F synthesis: 11.113774 s
+
+GLOBAL-CROSS-FAMILY-ANALYSIS-001: PASS
+PHASE-F-CLOSURE-001: NOT RUN
+PHASE G: NOT AUTHORIZED

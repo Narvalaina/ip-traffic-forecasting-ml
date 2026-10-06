@@ -1,0 +1,289 @@
+{
+  "campaign_id": "TRANSFORMER-INFERENCE-RESIDUALS-001",
+  "parent_campaign_id": "UGR16-TRANSFORMER-LITE-001",
+  "status": "PASS",
+  "runner": {
+    "name": "analyze_transformer_inference_residuals_v1_2026-08-22.py",
+    "version": "1.0.0",
+    "sha256": "19a0b3ef3b361aa1a57e12de37255061e47ce62e2f892e36c3767a0a0635fe8f"
+  },
+  "governance": {
+    "training": false,
+    "refit": false,
+    "tuning": false,
+    "selection_change": false,
+    "source_predictions_modified": false,
+    "transformer_star": "T01/L24",
+    "canonical_seed": 20260820,
+    "references": {
+      "RECURRENT_star": "GRU/N06",
+      "ARIMA_star": "ARIMA(6,1,12)",
+      "VAR_star": "VAR(5)",
+      "TREE_star": "LGB01"
+    }
+  },
+  "authorities_and_sources": {
+    "033": {
+      "sha256": "4fcd61519612ae5fd3daa6d874a73df50b27b63531ac109f0782351875211552"
+    },
+    "044": {
+      "sha256": "2e32b0989c90a0af5558c86cac5367d75a7c5cc61b7ff2b0dc5b183ef14bf532"
+    },
+    "028": {
+      "sha256": "26379146225af9f0e804696e518cb31e81d4060614d96d1fdff4494cfec19e82"
+    },
+    "021": {
+      "sha256": "445ec43095bbf503d0a0ea45a2a209916fd705a0f197bb9b1961db2aeae74426"
+    },
+    "008": {
+      "sha256": "cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a"
+    },
+    "010": {
+      "sha256": "aeb527f1c7966cb91aeececd67d2da8e1f114236608e09296d9885ad1de0f530"
+    },
+    "transformer_predictions": {
+      "sha256": "7195fd3c656a0f34a40a8bbc29d262593c9de8fff6c4f3bc4c2c0b90c11cf750"
+    },
+    "recurrent_predictions": {
+      "sha256": "a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19"
+    },
+    "tree_manifest": {
+      "sha256": "f0a296c21b3077b2f9c8788fbb118572a203021ae69074bb1a4a2b027f3d2b46"
+    },
+    "tree_predictions": {
+      "sha256": "7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad"
+    },
+    "stat_manifest": {
+      "sha256": "847f877144f2932e0b5967b1de0678898cb640434dbfb20f2f9805d7c29883a7"
+    },
+    "stat_predictions": {
+      "sha256": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353"
+    }
+  },
+  "input_rows": {
+    "transformer": 2390,
+    "recurrent_star": 2390,
+    "tree_star": 2390,
+    "statistical_all": 11950,
+    "statistical_selected_arima_var": 4780
+  },
+  "inference": {
+    "loss": "absolute_error",
+    "loss_differential": "absolute_error_reference - absolute_error_transformer",
+    "positive_value_meaning": "TRANSFORMER*_improves_over_reference",
+    "primary_comparisons": 20,
+    "bootstrap_method": "circular_moving_block",
+    "bootstrap_repetitions": 5000,
+    "bootstrap_primary_block": 12,
+    "bootstrap_sensitivity_blocks": [
+      6,
+      12,
+      24
+    ],
+    "bootstrap_confidence": 0.95,
+    "random_seed": 20260717,
+    "dm_method": "mean loss differential with Newey-West/HAC LRV and normal approximation",
+    "newey_west_kernel": "Bartlett",
+    "hac_lag_rule": "max(12, horizon_steps - 1)",
+    "p_values": "two-sided_unadjusted",
+    "multiple_testing_correction": "none"
+  },
+  "residual_diagnostics": {
+    "models": [
+      "TRANSFORMER*"
+    ],
+    "residual_definition": "observed - predicted",
+    "traffic_levels": [
+      "Q1",
+      "Q2",
+      "Q3",
+      "Q4"
+    ],
+    "acf_max_lag": 48,
+    "worst_intervals_per_horizon": 5
+  },
+  "runtime": {
+    "python": "3.12.13 (main, Aug  7 2026, 02:25:39) [Clang 22.1.3 ]",
+    "platform": "Linux-6.18.33.2-microsoft-standard-WSL2-x86_64-with-glibc2.43",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "matplotlib": "3.11.1",
+    "seconds": 5.7117025519983144
+  },
+  "validation": {
+    "primary_rows_20": true,
+    "sensitivity_rows_60": true,
+    "paired_summary_rows_20": true,
+    "residual_summary_rows_4": true,
+    "residual_distribution_rows_4": true,
+    "traffic_threshold_rows_4": true,
+    "traffic_level_rows_16": true,
+    "hourly_rows_96": true,
+    "residual_acf_rows_192": true,
+    "worst_intervals_rows_20": true,
+    "aligned_predictions_rows_14340": true,
+    "annotated_transformer_rows_2390": true,
+    "figure_files_16": true,
+    "finite_primary_improvement": true,
+    "source_transformer_hash_unchanged": true,
+    "source_recurrent_hash_unchanged": true,
+    "source_tree_hash_unchanged": true,
+    "source_stat_hash_unchanged": true,
+    "selection_changed_false": true,
+    "training_false": true,
+    "refit_false": true,
+    "tuning_false": true,
+    "source_predictions_modified_false": true
+  },
+  "outputs": {
+    "primary_inference": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_primary_inference.csv",
+      "sha256": "21f68c92214bd23ba005f1b89ed614bb5a3d9ff636afe3a1893ebba2a7f02e93",
+      "bytes": 8371
+    },
+    "bootstrap_sensitivity": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_bootstrap_sensitivity.csv",
+      "sha256": "b685d8a96b623f70d9221b810c05731e73c90ec348aebb5ddb0f23803dc84ea3",
+      "bytes": 11789
+    },
+    "paired_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_paired_summary.csv",
+      "sha256": "55919f5f7536e9c5376ed0383f1588fcc865fda65ba2947750b9ffaf68fd3b3d",
+      "bytes": 2821
+    },
+    "residual_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_residual_summary.csv",
+      "sha256": "a6178260d5b8bd1f45a51ff7f6fa82116cc3494579e356fb680c6a530b00ce35",
+      "bytes": 627
+    },
+    "residual_distribution": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_residual_distribution.csv",
+      "sha256": "68ec40a20f82dae3ccde05b67a8bb6a2f3dd8ca4f3c06d0deb45caa1b3dacaf6",
+      "bytes": 760
+    },
+    "traffic_thresholds": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_traffic_thresholds.csv",
+      "sha256": "10b7d82cef02a08090ee2bc99ac5726ec798e62eb2d8a325cbd52c527be5be3b",
+      "bytes": 296
+    },
+    "traffic_level": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_traffic_level.csv",
+      "sha256": "86486422486b2563f47dbd2a168b55f22b88b42e4e4c1498936ef8db6c7d056e",
+      "bytes": 1550
+    },
+    "hourly": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_hourly.csv",
+      "sha256": "a3aedd293febb9c60e5f86d1372a965705d67a9eec7f17200691c9ad82fcc27e",
+      "bytes": 7240
+    },
+    "residual_acf": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_residual_acf.csv",
+      "sha256": "f5d4cc63a4370035ac1f6922516efb885abc7c3e26f4d1630039a239e9108027",
+      "bytes": 8636
+    },
+    "worst_intervals": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_worst_intervals.csv",
+      "sha256": "66908517cbd3f0dded1eec5eb396f61e420634a7324fde5a1113d13c5b253db4",
+      "bytes": 2536
+    },
+    "aligned_predictions": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_aligned_predictions.parquet",
+      "sha256": "a4a84b409bb1b17c3ca4259ae9902fb0c1da557479faae6bdb0b1241b6d47075",
+      "bytes": 436557
+    },
+    "annotated_transformer_predictions": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_annotated_transformer_predictions.parquet",
+      "sha256": "4174a281af50268472c0086e2aac398d6e5d3f0e091a79836fccd0cf31909038",
+      "bytes": 94510
+    },
+    "report": {
+      "path": "<PROJECT_ROOT>/results/metrics/transformer_lite/inference_residuals/v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_report.txt",
+      "sha256": "0be3fd53b1744bf3ccd73a3f5e855e20b91d6974e45f46525f203cfc9c4724f8",
+      "bytes": 7638
+    }
+  },
+  "figures": [
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_01_primary_inference.png",
+      "sha256": "f422fcd48b663bc6cc1d51c40fe842985748a5756cb38a7710dc54b466db13dd",
+      "bytes": 106947
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_01_primary_inference.pdf",
+      "sha256": "741a5e1ab7bf7983daab35200a40cb4500d6f0fc2f8f6ddea2c4294b35f7bcad",
+      "bytes": 19393
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_02_transformer_bias.png",
+      "sha256": "95ff370a8b1acce64ae6f64ef65cfcfbcb79a784c8312f067e2637c18b79825e",
+      "bytes": 71438
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_02_transformer_bias.pdf",
+      "sha256": "7b57e19a15fd53f9ec0e68c62b1fa2a9d540d51bae1ec39e40a571fe9085bc23",
+      "bytes": 17791
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_03_transformer_underprediction.png",
+      "sha256": "8cf53f2b7ee49bdd6c6e4af03d0a7c9128b76aebbf24fdaa342d9a3356dc1f06",
+      "bytes": 65977
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_03_transformer_underprediction.pdf",
+      "sha256": "05aa187dda431146e2cf2718e9c6d5deca8e343c01283480fac4dcd363113170",
+      "bytes": 15844
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_04_transformer_residual_acf.png",
+      "sha256": "73c1efc2d3c23ca76363b82bf4d38442b35a726698c3730471733716bd39d1b8",
+      "bytes": 159724
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_04_transformer_residual_acf.pdf",
+      "sha256": "4464125834a13f6fc6db37c6c84e2499b4abc744ba1287e0db7ba0f2727a046e",
+      "bytes": 19089
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_05_transformer_traffic_level_mae.png",
+      "sha256": "d030996edd51a464ee039161284bd58bf0719326d87426e84b4fc2fa84b17b60",
+      "bytes": 44695
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_05_transformer_traffic_level_mae.pdf",
+      "sha256": "cbfa14dcf8864fd0b76056893bf0d6b188ef6cf287a26f5adbb24986c17a336c",
+      "bytes": 18073
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_06_transformer_hourly_bias.png",
+      "sha256": "b43301b8d96422c0e0636ea80f1f83616a7916ce68743f8b0804fa6090f7eb74",
+      "bytes": 196681
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_06_transformer_hourly_bias.pdf",
+      "sha256": "3355b43945e38c231bba39b31c9f326c9716b8ab01bb9f942a61f7193e1f97e3",
+      "bytes": 19231
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_07_transformer_observed_predicted_h1_first24h.png",
+      "sha256": "5b55aa6e2930e6f042bfd24bc94b0cd174a47af3f24bc4e42656b727dcd8e2e6",
+      "bytes": 251525
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_07_transformer_observed_predicted_h1_first24h.pdf",
+      "sha256": "3956f4233b8054a6e4000a5c720bd7126be3c495683caa3571d2dcd6442fcb51",
+      "bytes": 25946
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_08_transformer_residual_distribution.png",
+      "sha256": "cda80bcc6dff528935fbd6071b0a183e8cae8a4f0fd1d2bacb57677618769551",
+      "bytes": 44460
+    },
+    {
+      "path": "<PROJECT_ROOT>/results/figures/transformer_lite/transformer_inference_residuals_v1_2026-08-22/ugr16_transformer_inference_residuals_v1_2026-08-22_08_transformer_residual_distribution.pdf",
+      "sha256": "d4945265543acb8db8fb63846cba102283384a52fedc20e3867f1187567386d9",
+      "bytes": 17968
+    }
+  ],
+  "transformer_closure_run": false,
+  "phase_f_started": false
+}

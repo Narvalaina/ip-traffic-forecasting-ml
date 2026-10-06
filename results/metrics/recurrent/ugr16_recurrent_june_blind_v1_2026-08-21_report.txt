@@ -1,0 +1,55 @@
+==============================================================================================================================
+RECURRENT-JUNE-BLIND-001 — REPORT
+==============================================================================================================================
+Runner version: 1.0.0
+Runner SHA-256: a495010700eae4de88b2101d7326bc6590f78c7af120c578293565d797eeba0e
+023 SHA-256: af9d0d5984fd5e98c6660227f7bd98e246dbf934ad8df416439c2fd5bb59b174
+024 SHA-256: f877831a0078eb1dd57bbc10e245e2bb19064d4da24630c3853b4b4e58399c9f
+025 SHA-256: 21c14840ea6a67fba52f6dbb114221e0b48cc62dafb1a2039201f37829093cb2
+026 SHA-256: 329c3068fb60f97789cc3b973ec0a13e4c6770d95706ac2688f8017fa78f289f
+027 SHA-256: 27d7e96fdbc8575f241638eb817a31f28673cf512d30dfac8efb34835bf41de4
+
+GOVERNANCE
+June role: blind external evaluation
+Representatives changed: NO
+Best-seed selection: NO
+Retuning: NO
+Canonical seed: 20260820
+Blind-target-driven fitting: NO
+
+FROZEN REPRESENTATIVES
+RNN*       = SimpleRNN/N03
+LSTM*      = LSTM/N04
+GRU*       = GRU/N06
+RECURRENT* = GRU/N06
+
+JUNE SPLIT
+train rows = 1402
+blind rows = 602
+blind starts = 2016-06-17 21:50:00
+
+BLIND METRICS
+GRU        N06 H1  n=602 best_epoch=33 MAE=20091976.855599 RMSE=26808284.420078 ratio_vs_Persistence=1.161469900 skill=-0.161469900 bias=-11134306.250798 underpred_pct=28.405316 P95=54085090.426521
+GRU        N06 H3  n=600 best_epoch=40 MAE=22776115.801180 RMSE=29997871.309015 ratio_vs_Persistence=1.070108410 skill=-0.070108410 bias=-11969831.041523 underpred_pct=28.833333 P95=61918168.233163
+GRU        N06 H6  n=597 best_epoch=71 MAE=38896534.823301 RMSE=48130451.309991 ratio_vs_Persistence=1.627932589 skill=-0.627932589 bias=-27087917.492963 underpred_pct=21.943049 P95=96407971.352351
+GRU        N06 H12 n=591 best_epoch=121 MAE=51691252.086381 RMSE=62900398.944361 ratio_vs_Persistence=1.854217254 skill=-0.854217254 bias=-40068936.531250 underpred_pct=17.597293 P95=116379622.714449
+LSTM       N04 H1  n=602 best_epoch=34 MAE=17626827.274731 RMSE=24571464.766797 ratio_vs_Persistence=1.018965404 skill=-0.018965404 bias=-5339115.190149 underpred_pct=37.541528 P95=52023615.589851
+LSTM       N04 H3  n=600 best_epoch=68 MAE=26835013.095996 RMSE=33503857.223038 ratio_vs_Persistence=1.260810818 skill=-0.260810818 bias=-14295528.385334 underpred_pct=27.166667 P95=63094193.054039
+LSTM       N04 H6  n=597 best_epoch=44 MAE=29271280.103358 RMSE=37301639.763971 ratio_vs_Persistence=1.225087814 skill=-0.225087814 bias=-19153123.335964 underpred_pct=23.618090 P95=77728442.802664
+LSTM       N04 H12 n=591 best_epoch=62 MAE=41205124.614351 RMSE=49477507.017742 ratio_vs_Persistence=1.478069304 skill=-0.478069304 bias=-28292984.161968 underpred_pct=26.226734 P95=90864319.460366
+SimpleRNN  N03 H1  n=602 best_epoch=7 MAE=18771653.526162 RMSE=25151429.124003 ratio_vs_Persistence=1.085145115 skill=-0.085145115 bias=-7215190.646364 underpred_pct=36.212625 P95=50363722.350472
+SimpleRNN  N03 H3  n=600 best_epoch=6 MAE=24388168.197201 RMSE=30634611.080853 ratio_vs_Persistence=1.145848753 skill=-0.145848753 bias=-13371949.288244 underpred_pct=27.166667 P95=58674561.675502
+SimpleRNN  N03 H6  n=597 best_epoch=10 MAE=28280956.675903 RMSE=35049882.546269 ratio_vs_Persistence=1.183639911 skill=-0.183639911 bias=-18581983.297000 underpred_pct=22.948074 P95=66147197.494649
+SimpleRNN  N03 H12 n=591 best_epoch=39 MAE=37386194.599753 RMSE=44324516.776989 ratio_vs_Persistence=1.341080440 skill=-0.341080440 bias=-29735010.366994 underpred_pct=16.412860 P95=82362287.976487
+
+Runtime rows: 12
+Epoch-selection rows: 12
+Horizon metric rows: 12
+Blind prediction rows: 7170
+Campaign seconds: 140.078
+STATUS: PASS
+REPRESENTATIVES CHANGED: NO
+BEST SEED SELECTED: NO
+RETUNING: NO
+RECURRENT-INFERENCE-RESIDUALS-001: NOT RUN
+RECURRENT-CLOSURE-001: NOT RUN

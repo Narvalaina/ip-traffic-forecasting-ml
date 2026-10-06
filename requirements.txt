@@ -1,0 +1,19 @@
+# Reference portable environment for the public TFM repository.
+# Baseline: CPython 3.12 (historical WSL reference: Python 3.12.13).
+#
+# The scientific campaigns also used Google Colab. In particular, GPU runs
+# observed PyTorch 2.11.0+cu128 with CUDA 12.8 and cuDNN 91900. The public
+# requirements keep the portable PyPI package name/version; runtime-specific GPU
+# installation details are documented separately during PHASE 1F.
+
+lightgbm==4.7.0
+matplotlib==3.11.1
+numpy==2.5.2
+pandas==3.0.5
+pyarrow==25.0.1
+scikit-learn==1.9.0
+scipy==1.18.0
+statsmodels==0.14.6
+torch==2.11.0
+tqdm==4.68.4
+xgboost-cpu==3.3.0

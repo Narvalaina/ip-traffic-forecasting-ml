@@ -1,0 +1,326 @@
+{
+  "campaign_id": "TREE-INFERENCE-RESIDUALS-001",
+  "parent_campaign_id": "UGR16-TREE-ENSEMBLES-001",
+  "source_tree_run": "TREE-JUNE-BLIND-001",
+  "source_statistical_run": "UGR16-STATISTICAL-JUNE-BLIND-001",
+  "status": "PASS",
+  "runner": {
+    "version": "1.0.1",
+    "path": "<PROJECT_ROOT>/src/evaluation/analyze_ugr16_tree_inference_residuals_v101.py",
+    "sha256": "be175e3ce86125af1881f05d0ef0b24e837288013ee50aeac77090796fcd58db"
+  },
+  "governance": {
+    "model_training": false,
+    "parameter_refit": false,
+    "tuning": false,
+    "selection": false,
+    "model_substitution": false,
+    "source_predictions_modified": false,
+    "tree_representatives": {
+      "RF01": "random_forest",
+      "XGB06": "xgboost",
+      "LGB01": "lightgbm"
+    },
+    "tree_star": "LGB01",
+    "arima_star": "ARIMA(6,1,12)",
+    "var_star": "VAR(5)"
+  },
+  "inputs": {
+    "017": {
+      "sha256": "8c0a94e4ee80a84b78bf077d6abc3c18617ad1736b6d978047d0db1d52055003"
+    },
+    "021": {
+      "sha256": "445ec43095bbf503d0a0ea45a2a209916fd705a0f197bb9b1961db2aeae74426"
+    },
+    "008": {
+      "sha256": "cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a"
+    },
+    "environment": {
+      "sha256": "82ab24602f66975929904bab802da8893bd059e51c7214bccf412a95275216b2"
+    },
+    "june": {
+      "sha256": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3"
+    },
+    "tree_manifest": {
+      "sha256": "f0a296c21b3077b2f9c8788fbb118572a203021ae69074bb1a4a2b027f3d2b46"
+    },
+    "tree_predictions": {
+      "sha256": "7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad"
+    },
+    "stat_manifest": {
+      "sha256": "847f877144f2932e0b5967b1de0678898cb640434dbfb20f2f9805d7c29883a7"
+    },
+    "stat_predictions": {
+      "sha256": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353"
+    }
+  },
+  "prediction_inputs": {
+    "tree": {
+      "path": "<PROJECT_ROOT>/results/predictions/tree_ensembles/ugr16_tree_june_blind_predictions.parquet",
+      "sha256": "7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad",
+      "rows": 7170
+    },
+    "statistical": {
+      "path": "<PROJECT_ROOT>/results/predictions/ugr16_statistical_june_blind_predictions.parquet",
+      "sha256": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353",
+      "rows": 11950,
+      "selected_rows_arima_var": 4780,
+      "model_column": "config",
+      "schema_adapter": {
+        "y_true": "y_true_bps",
+        "y_pred": "y_pred_bps",
+        "source_values_modified": false
+      }
+    }
+  },
+  "inference": {
+    "loss": "absolute_error",
+    "loss_differential": "absolute_error_reference - absolute_error_model",
+    "positive_value_meaning": "model improves over reference",
+    "primary_comparisons": [
+      {
+        "comparison": "rf_vs_persistence",
+        "model": "RF01",
+        "reference": "persistence"
+      },
+      {
+        "comparison": "xgb_vs_persistence",
+        "model": "XGB06",
+        "reference": "persistence"
+      },
+      {
+        "comparison": "lgbm_vs_persistence",
+        "model": "LGB01",
+        "reference": "persistence"
+      },
+      {
+        "comparison": "tree_vs_arima",
+        "model": "LGB01",
+        "reference": "ARIMA(6,1,12)"
+      },
+      {
+        "comparison": "tree_vs_var",
+        "model": "LGB01",
+        "reference": "VAR(5)"
+      }
+    ],
+    "bootstrap_method": "circular moving-block bootstrap",
+    "bootstrap_repetitions": 5000,
+    "bootstrap_block_length": 12,
+    "bootstrap_sensitivity_blocks": [
+      6,
+      12,
+      24
+    ],
+    "bootstrap_confidence": 0.95,
+    "random_seed": 20260717,
+    "seed_policy": "reuse historical UGR16 inference seed",
+    "dm_method": "mean loss differential with Newey-West/HAC LRV and normal approximation",
+    "newey_west_kernel": "Bartlett",
+    "minimum_hac_lag": 12,
+    "hac_lag_rule": "max(12, horizon_steps - 1)",
+    "multiple_testing_correction": "none"
+  },
+  "residual_analysis": {
+    "residual_definition": "observed - predicted",
+    "positive_residual": "underprediction",
+    "negative_residual": "overprediction",
+    "traffic_levels": [
+      "Q1_low",
+      "Q2_mid_low",
+      "Q3_mid_high",
+      "Q4_high"
+    ],
+    "traffic_level_definition": "per-horizon quartiles of common observed y_true in June blind",
+    "acf_max_lag": 48,
+    "acf_summary_lags": [
+      1,
+      3,
+      6,
+      12,
+      24
+    ],
+    "top_worst_per_model_horizon": 5,
+    "regression_to_mean": "descriptive only",
+    "observed_predicted_segment": "first 24 h of H1 blind targets; fixed non-cherry-picked segment"
+  },
+  "validation": {
+    "aligned_models_6": true,
+    "primary_rows_20": true,
+    "sensitivity_rows_60": true,
+    "paired_summary_rows_20": true,
+    "residual_summary_rows_12": true,
+    "residual_distribution_rows_12": true,
+    "traffic_threshold_rows_4": true,
+    "traffic_level_rows_48": true,
+    "acf_rows_576": true,
+    "regression_rows_12": true,
+    "worst_rows_60": true,
+    "n_pairs_positive": true,
+    "ci_ordered": true,
+    "bootstrap_probability_valid": true,
+    "sensitivity_probability_valid": true,
+    "sensitivity_ci_ordered": true,
+    "dm_p_values_all_finite": true,
+    "dm_p_values_valid": true,
+    "coverage_expected": true,
+    "source_tree_hash_unchanged": true,
+    "source_stat_hash_unchanged": true,
+    "selection_changed_false": true,
+    "training_false": true
+  },
+  "processing_seconds": 14.172744454999702,
+  "tree_closure_run": false,
+  "outputs": {
+    "paired_inference": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_paired_inference.csv",
+      "sha256": "d630907b55631bf6a3ea9664806b0a8eb300b97a5fd00a02b134543debf2bbf9",
+      "bytes": 7817
+    },
+    "bootstrap_sensitivity": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_bootstrap_sensitivity.csv",
+      "sha256": "bb8e17e3d10aef31f41f462e3eb1b73c700be81bc81ca199b7b30a31e1a9349b",
+      "bytes": 10480
+    },
+    "paired_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_paired_summary.csv",
+      "sha256": "45ef5ea5d1f9faa6d83203f970901e80664adbbd11dd496c49425578bbfa5572",
+      "bytes": 2355
+    },
+    "residual_summary": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_residual_summary.csv",
+      "sha256": "53c381f9edc2502e5ef34153dc89bb7cd90fdd124c119699c5297896bbd2e631",
+      "bytes": 1674
+    },
+    "residual_distribution": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_residual_distribution.csv",
+      "sha256": "b1491f3f2fdafabae9b5d2d13c63d3288adbd939fc5df53a98b18f5985636b91",
+      "bytes": 2516
+    },
+    "traffic_thresholds": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_traffic_thresholds.csv",
+      "sha256": "10b7d82cef02a08090ee2bc99ac5726ec798e62eb2d8a325cbd52c527be5be3b",
+      "bytes": 296
+    },
+    "traffic_level": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_traffic_level.csv",
+      "sha256": "1b7c18ae003367786f9e7ad9d2cb87c7dee50a5e022fe0ff17790941ef2d3005",
+      "bytes": 6259
+    },
+    "hourly": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_hourly.csv",
+      "sha256": "8267b6f2e3e5b9894b610492a86b8b4b62552ae4106494f637e5332b492d6bc3",
+      "bytes": 29302
+    },
+    "residual_acf": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_residual_acf.csv",
+      "sha256": "48e4e0b976875f6752f730e5b979d496ff9575133781c9f9eee7bba9465ed1f9",
+      "bytes": 24423
+    },
+    "regression_to_mean": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_regression_to_mean.csv",
+      "sha256": "029f918cd057fcf48167330ab6f668d9fa4a3e2e60e0aac641d36a577d98710e",
+      "bytes": 1673
+    },
+    "worst_intervals": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_worst_intervals.csv",
+      "sha256": "53502d47d0f649ea57e76d4a37e0f7627c66c3a6bed85eac50faf0730b0bff14",
+      "bytes": 6838
+    },
+    "aligned_predictions": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_aligned_predictions.parquet",
+      "sha256": "ce4036d59e8e81afbc0354fa8ab504c620d5da5791bb93d21b0ed91345a3e4f8",
+      "bytes": 420743
+    },
+    "annotated_tree_predictions": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_annotated_tree_predictions.parquet",
+      "sha256": "86d10ad89d4c339b5933fc4685444d4b82538822a0ea7648a93d6883ea174ccc",
+      "bytes": 225671
+    },
+    "report": {
+      "path": "<PROJECT_ROOT>/results/metrics/tree_ensembles/ugr16_tree_inference_residuals_report.txt",
+      "sha256": "826073802e156d6e2afc7e527e689cd41d3f643891152cb08399de384395a926",
+      "bytes": 9095
+    },
+    "figure_01": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_01_tree_vs_persistence_ci.png",
+      "sha256": "f0f57566aadf9c6112cba58aeb2a2bef600e80f23d61c9194d77e4dd545a890d",
+      "bytes": 111105
+    },
+    "figure_02": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_01_tree_vs_persistence_ci.pdf",
+      "sha256": "b0977e3812310717cb07dfadac6b9d676b2c04923953de0c37cfebab426ebf8c",
+      "bytes": 20102
+    },
+    "figure_03": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_02_tree_vs_statistical_ci.png",
+      "sha256": "aa693be4ac6941e9bb4e7563887107575899c388e49cc064e86b1ad4040b459f",
+      "bytes": 94730
+    },
+    "figure_04": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_02_tree_vs_statistical_ci.pdf",
+      "sha256": "3f0553fb3e4456d09bf1b24ef6e364bf5f80aac73fcca11a9299d1478a2988aa",
+      "bytes": 19366
+    },
+    "figure_05": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_03_bootstrap_sensitivity.png",
+      "sha256": "95f11e30cab2dd221e31bf5bb9b8f29459b542752d597fdb88a5e650a443b2a7",
+      "bytes": 177759
+    },
+    "figure_06": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_03_bootstrap_sensitivity.pdf",
+      "sha256": "2711c937fcd5e7b0d3f34531df93a4bbd6bef32c6ef5a691c0a2548c37ad8d8d",
+      "bytes": 20739
+    },
+    "figure_07": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_04_tree_residual_acf.png",
+      "sha256": "67226c62332227fe86feb2fb989825a8e264fbead92389ab28ae49156857ceb8",
+      "bytes": 151722
+    },
+    "figure_08": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_04_tree_residual_acf.pdf",
+      "sha256": "15b1413ae5892056fc0e0471929222cf1da0621f5ab3bd467dc03f9873e13f35",
+      "bytes": 16813
+    },
+    "figure_09": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_05_tree_traffic_level_mae.png",
+      "sha256": "2e66c756613c96d27098c2ecefca4e4bdcc3b943e54cbf4c575f96d7d90c68c9",
+      "bytes": 125427
+    },
+    "figure_10": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_05_tree_traffic_level_mae.pdf",
+      "sha256": "066852ea7217089eb37b28404d8a59d9e8a6f4735c9cb3b773f71f102fd897b0",
+      "bytes": 19265
+    },
+    "figure_11": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_06_tree_hourly_bias.png",
+      "sha256": "26560bd57c7395357f74b2bb7484fb69e1b949bf5d96a23f5021e1a3f9a11c0c",
+      "bytes": 199254
+    },
+    "figure_12": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_06_tree_hourly_bias.pdf",
+      "sha256": "e6057d2fa20d3e7cb33a453c5c71ba540425a9b04402a4ae0dc8c91a44ab94e8",
+      "bytes": 19485
+    },
+    "figure_13": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_07_tree_observed_predicted_h1_first24h.png",
+      "sha256": "9d846d237f2a457fa8531f6909dd0637dcfb2df2b1cdd657080d50c8648233c9",
+      "bytes": 248770
+    },
+    "figure_14": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_07_tree_observed_predicted_h1_first24h.pdf",
+      "sha256": "65206884d7b467a44cae653d40f8dc9e4d080bfe964fb4eae1a5cb1d2c5c8ff6",
+      "bytes": 24504
+    },
+    "figure_15": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_08_tree_residual_distribution.png",
+      "sha256": "7597e7a0f2430e160f631af86c346e6572955c9b322db7773476caee1e110e24",
+      "bytes": 42918
+    },
+    "figure_16": {
+      "path": "<PROJECT_ROOT>/results/figures/tree_ensembles/ugr16_tree_inference_residuals/ugr16_tree_inference_residuals_08_tree_residual_distribution.pdf",
+      "sha256": "ecff84ecca2aa6909e21175edd231b7613caadaa24a223f412321742f2f69fa7",
+      "bytes": 17848
+    }
+  }
+}

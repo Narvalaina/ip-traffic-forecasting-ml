@@ -1,0 +1,80 @@
+================================================================================================================
+TREE-JUNE-BLIND-001 — EVALUACIÓN EXTERNA CIEGA
+================================================================================================================
+Campaña marco:                  UGR16-TREE-ENSEMBLES-001
+Subcampaña:                     TREE-JUNE-BLIND-001
+Estado:                         PASS
+
+JUNE
+----------------------------------------------------------------------------------------------------------------
+SHA-256:                        d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3
+Filas:                          2004
+Inicio:                         2016-06-13T01:00:00
+Fin:                            2016-06-19T23:55:00
+Boundary:                       2016-06-17T21:50:00
+Train:                          1402
+Blind test físico:              602
+
+DISEÑO CONGELADO
+----------------------------------------------------------------------------------------------------------------
+RF*   = RF01
+XGB*  = XGB06
+LGBM* = LGB01
+TREE* = LGB01 / LightGBM
+Seed =                          20260818
+Fit único =                    YES
+Retuning =                     NO
+Recalibración =                NO
+Refit por origen =             NO
+Clipping =                     NO
+
+MÉTRICAS POR HORIZONTE
+----------------------------------------------------------------------------------------------------------------
+       family candidate_id  horizon_steps  n_predictions  model_mae_mbps  persistence_mae_mbps  mae_ratio_vs_persistence  skill_vs_persistence_pct  model_rmse_mbps  model_smape_pct  model_mase      model_bias_bps  model_underprediction_pct  model_p95_absolute_error_bps
+random_forest         RF01              1            602    24.018124050          17.298749503               1.388431230             -38.843123000     31.578995491     16.948019679 1.023653768 -16549895.417270210               25.249169435            66406874.720556594
+random_forest         RF01              3            600    38.867964227          21.283933096               1.826164556             -82.616455572     47.259829853     25.639352558 1.656554774 -33776709.693320386               14.833333333            90591476.340246364
+random_forest         RF01              6            597    56.033504870          23.893209758               2.345164398            -134.516439760     65.352816068     34.361121722 2.388151060 -52823172.869075991                9.212730318           115247326.332600087
+random_forest         RF01             12            591    61.055249917          27.877667503               2.190113284            -119.011328374     71.251801300     36.657151297 2.602178110 -57280432.735892728                8.629441624           120617168.708766654
+      xgboost        XGB06              1            602    32.527696660          17.298749503               1.880349597             -88.034959719     41.228336609     21.993247260 1.386332221 -26404829.504761901               20.099667774            82804619.801333308
+      xgboost        XGB06              3            600    51.042764057          21.283933096               2.398182884            -139.818288407     61.549286429     31.716237620 2.175445412 -47488752.739466667               10.500000000           112729511.183999971
+      xgboost        XGB06              6            597    67.071433919          23.893209758               2.807133683            -180.713368348     77.027021596     39.399999663 2.858588203 -65062755.446119480                6.030150754           125783163.055999860
+      xgboost        XGB06             12            591    60.140829939          27.877667503               2.157312119            -115.731211851     71.269024599     36.042021082 2.563205481 -55669764.094664410               12.013536379           120786089.333333343
+     lightgbm        LGB01              1            602    25.539152186          17.298749503               1.476358287             -47.635828713     32.976443440     17.915762821 1.088480071 -17194188.590027042               25.913621262            68039903.771579936
+     lightgbm        LGB01              3            600    40.315628199          21.283933096               1.894181306             -89.418130647     48.842114026     26.393100982 1.718254292 -35484663.867772438               14.166666667            90981528.397411391
+     lightgbm        LGB01              6            597    51.562243509          23.893209758               2.158029165            -115.802916521     61.453508233     32.009234329 2.197585655 -48407960.836776681                9.715242881           107533623.655900136
+     lightgbm        LGB01             12            591    56.991931146          27.877667503               2.044357949            -104.435794856     70.337354339     34.139347786 2.428999241 -52878260.017466716               11.675126904           127119543.677438915
+
+RESUMEN DESCRIPTIVO JUNE
+----------------------------------------------------------------------------------------------------------------
+       family candidate_id  tree_star  score_june_descriptive  total_fit_seconds  total_predict_seconds  total_serialized_model_bytes  selection_changed  descriptive_rank
+     lightgbm        LGB01       True             1.893231677        0.449210939            0.018878697                        579982              False                 1
+random_forest         RF01      False             1.937468367       12.033915850            0.589659092                       3989794              False                 2
+      xgboost        XGB06      False             2.310744571        1.550796187            0.015011698                       1405237              False                 3
+
+VALIDACIONES
+----------------------------------------------------------------------------------------------------------------
+metrics_12                                : PASS
+runtime_12                                : PASS
+summary_3                                 : PASS
+predictions_7170                          : PASS
+only_june                                 : PASS
+representatives_exact                     : PASS
+canonical_seed_only                       : PASS
+all_horizons                              : PASS
+no_resource_limit                         : PASS
+no_error                                  : PASS
+finite_predictions                        : PASS
+finite_targets                            : PASS
+future_targets                            : PASS
+index_horizon                             : PASS
+no_duplicates                             : PASS
+coverage_one                              : PASS
+selection_never_changed                   : PASS
+tree_star_still_lgb01                     : PASS
+
+INTERPRETACIÓN DE ESTADO
+----------------------------------------------------------------------------------------------------------------
+El ranking June es únicamente descriptivo.
+RF*, XGB*, LGBM* y TREE* NO pueden cambiar.
+Los contrastes con ARIMA*/VAR* NO se ejecutan aquí.
+La inferencia pareada y residuos pertenecen a TREE-INFERENCE-RESIDUALS-001.

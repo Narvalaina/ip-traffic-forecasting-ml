@@ -1,0 +1,7 @@
+model,model_order,wins,losses,not_distinguishable,opponents
+Persistence,0,11,6,3,20
+ARIMA*,1,14,0,6,20
+VAR*,2,16,0,4,20
+TREE*,3,0,19,1,20
+RECURRENT*,4,3,13,4,20
+TRANSFORMER*,5,6,12,2,20

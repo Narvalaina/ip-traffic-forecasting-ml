@@ -1,0 +1,100 @@
+================================================================================================================
+UGR'16 JUNE BLIND — INFERENCIA PAREADA Y ANÁLISIS FINAL DE RESIDUOS
+================================================================================================================
+Campaign: UGR16-STATISTICAL-JUNE-INFERENCE-RESIDUALS-001
+Source run: UGR16-STATISTICAL-JUNE-BLIND-001
+Runner SHA-256: b1bfa4b55404d352159937e7898304b4a05d11cc0125653773f4ff332136d6ed
+Reentrenamiento realizado: NO
+Refit realizado: NO
+Tuning realizado: NO
+Selección realizada: NO
+Predicciones fuente modificadas: NO
+
+INFERENCIA
+----------------------------------------------------------------------------------------------------------------
+Loss: absolute error
+Loss differential: abs_error_reference - abs_error_model
+Positive value: model improves over reference
+Bootstrap: circular moving-block, 5,000 réplicas
+Primary block: 12 intervalos = 60 min
+Sensitivity blocks: 6 (30 min), 12 (60 min), 24 (120 min)
+Confidence: 0.95
+Minimum HAC lag: 12
+DM-HAC: mean loss differential + Newey-West/Bartlett LRV + normal approximation
+Multiple-testing correction: NONE (continuity with established historical protocol)
+
+PRIMARY PAIRED CONTRASTS
+----------------------------------------------------------------------------------------------------------------
+ar_vs_arma              H 1 ( 5 min): AR(24) vs ARMA(24,3) | improvement=+0.0672 Mbit/s | CI=[-0.0321, +0.1669] | P(improvement)=0.9096 | DM-HAC p=0.180926 | bootstrap=not_distinguishable
+ar_vs_arma              H 3 (15 min): AR(24) vs ARMA(24,3) | improvement=+0.0679 Mbit/s | CI=[-0.0764, +0.2045] | P(improvement)=0.8198 | DM-HAC p=0.333714 | bootstrap=not_distinguishable
+ar_vs_arma              H 6 (30 min): AR(24) vs ARMA(24,3) | improvement=+0.2706 Mbit/s | CI=[+0.1115, +0.4339] | P(improvement)=0.9996 | DM-HAC p=0.000816378 | bootstrap=model_better
+ar_vs_arma              H12 (60 min): AR(24) vs ARMA(24,3) | improvement=+0.5212 Mbit/s | CI=[+0.2554, +0.7808] | P(improvement)=1.0000 | DM-HAC p=0.000174256 | bootstrap=model_better
+arima_vs_persistence    H 1 ( 5 min): ARIMA(6,1,12) vs persistence | improvement=+1.0996 Mbit/s | CI=[+0.2059, +1.9969] | P(improvement)=0.9914 | DM-HAC p=0.0170099 | bootstrap=model_better
+arima_vs_persistence    H 3 (15 min): ARIMA(6,1,12) vs persistence | improvement=+1.7948 Mbit/s | CI=[+0.6163, +2.9049] | P(improvement)=0.9974 | DM-HAC p=0.00223262 | bootstrap=model_better
+arima_vs_persistence    H 6 (30 min): ARIMA(6,1,12) vs persistence | improvement=+1.4698 Mbit/s | CI=[-0.0769, +2.9947] | P(improvement)=0.9682 | DM-HAC p=0.0649144 | bootstrap=not_distinguishable
+arima_vs_persistence    H12 (60 min): ARIMA(6,1,12) vs persistence | improvement=+1.1902 Mbit/s | CI=[-0.7676, +3.1363] | P(improvement)=0.8880 | DM-HAC p=0.236663 | bootstrap=not_distinguishable
+var_vs_arima            H 1 ( 5 min): VAR(5) vs ARIMA(6,1,12) | improvement=+0.0442 Mbit/s | CI=[-0.3332, +0.4371] | P(improvement)=0.5828 | DM-HAC p=0.81734 | bootstrap=not_distinguishable
+var_vs_arima            H 3 (15 min): VAR(5) vs ARIMA(6,1,12) | improvement=+0.2639 Mbit/s | CI=[-0.3113, +0.8716] | P(improvement)=0.8088 | DM-HAC p=0.386763 | bootstrap=not_distinguishable
+var_vs_arima            H 6 (30 min): VAR(5) vs ARIMA(6,1,12) | improvement=+0.3264 Mbit/s | CI=[-0.5119, +1.1542] | P(improvement)=0.7792 | DM-HAC p=0.456667 | bootstrap=not_distinguishable
+var_vs_arima            H12 (60 min): VAR(5) vs ARIMA(6,1,12) | improvement=+0.1372 Mbit/s | CI=[-1.0277, +1.3156] | P(improvement)=0.5818 | DM-HAC p=0.827576 | bootstrap=not_distinguishable
+var_vs_persistence      H 1 ( 5 min): VAR(5) vs persistence | improvement=+1.1438 Mbit/s | CI=[+0.2876, +2.0197] | P(improvement)=0.9940 | DM-HAC p=0.0105315 | bootstrap=model_better
+var_vs_persistence      H 3 (15 min): VAR(5) vs persistence | improvement=+2.0587 Mbit/s | CI=[+1.0851, +3.0195] | P(improvement)=0.9998 | DM-HAC p=2.12796e-05 | bootstrap=model_better
+var_vs_persistence      H 6 (30 min): VAR(5) vs persistence | improvement=+1.7963 Mbit/s | CI=[+0.8429, +2.7560] | P(improvement)=1.0000 | DM-HAC p=0.000319707 | bootstrap=model_better
+var_vs_persistence      H12 (60 min): VAR(5) vs persistence | improvement=+1.3273 Mbit/s | CI=[+0.2625, +2.4162] | P(improvement)=0.9940 | DM-HAC p=0.0139051 | bootstrap=model_better
+
+PAIRWISE WIN RATES
+----------------------------------------------------------------------------------------------------------------
+ar_vs_arma              H 1: wins=302/602 (50.17 %) | mean improvement=+0.0672 Mbit/s
+ar_vs_arma              H 3: wins=312/600 (52.00 %) | mean improvement=+0.0679 Mbit/s
+ar_vs_arma              H 6: wins=359/597 (60.13 %) | mean improvement=+0.2706 Mbit/s
+ar_vs_arma              H12: wins=375/591 (63.45 %) | mean improvement=+0.5212 Mbit/s
+arima_vs_persistence    H 1: wins=301/602 (50.00 %) | mean improvement=+1.0996 Mbit/s
+arima_vs_persistence    H 3: wins=313/600 (52.17 %) | mean improvement=+1.7948 Mbit/s
+arima_vs_persistence    H 6: wins=312/597 (52.26 %) | mean improvement=+1.4698 Mbit/s
+arima_vs_persistence    H12: wins=299/591 (50.59 %) | mean improvement=+1.1902 Mbit/s
+var_vs_arima            H 1: wins=314/602 (52.16 %) | mean improvement=+0.0442 Mbit/s
+var_vs_arima            H 3: wins=315/600 (52.50 %) | mean improvement=+0.2639 Mbit/s
+var_vs_arima            H 6: wins=309/597 (51.76 %) | mean improvement=+0.3264 Mbit/s
+var_vs_arima            H12: wins=290/591 (49.07 %) | mean improvement=+0.1372 Mbit/s
+var_vs_persistence      H 1: wins=304/602 (50.50 %) | mean improvement=+1.1438 Mbit/s
+var_vs_persistence      H 3: wins=336/600 (56.00 %) | mean improvement=+2.0587 Mbit/s
+var_vs_persistence      H 6: wins=347/597 (58.12 %) | mean improvement=+1.7963 Mbit/s
+var_vs_persistence      H12: wins=317/591 (53.64 %) | mean improvement=+1.3273 Mbit/s
+
+RESIDUAL SUMMARY — VAR / ARIMA
+----------------------------------------------------------------------------------------------------------------
+ARIMA(6,1,12)   H 1: MAE=16.1992 | bias=-0.0413 | under=50.17% | P95=51.3194 | ACFres(1)=-0.1023
+ARIMA(6,1,12)   H 3: MAE=19.4891 | bias=-0.0332 | under=50.17% | P95=53.7999 | ACFres(1)=+0.4275
+ARIMA(6,1,12)   H 6: MAE=22.4234 | bias=-0.1090 | under=50.25% | P95=61.2361 | ACFres(1)=+0.5506
+ARIMA(6,1,12)   H12: MAE=26.6875 | bias=-0.0526 | under=51.61% | P95=66.1573 | ACFres(1)=+0.6799
+VAR(5)          H 1: MAE=16.1549 | bias=-0.0508 | under=48.01% | P95=50.1855 | ACFres(1)=-0.1003
+VAR(5)          H 3: MAE=19.2252 | bias=-0.0575 | under=48.83% | P95=56.1517 | ACFres(1)=+0.4153
+VAR(5)          H 6: MAE=22.0969 | bias=-0.1840 | under=50.42% | P95=63.5679 | ACFres(1)=+0.5163
+VAR(5)          H12: MAE=26.5503 | bias=-0.3480 | under=49.07% | P95=71.9712 | ACFres(1)=+0.6605
+
+EXTREMES — VAR / ARIMA
+----------------------------------------------------------------------------------------------------------------
+ARIMA(6,1,12)   H 1: Q1 MAE=16.376, bias=-13.334 | Q4 MAE=19.566, bias=+12.725 | extreme/middle=1.247 | regression-to-mean-direction=True
+ARIMA(6,1,12)   H 3: Q1 MAE=19.754, bias=-16.993 | Q4 MAE=25.048, bias=+16.830 | extreme/middle=1.351 | regression-to-mean-direction=True
+ARIMA(6,1,12)   H 6: Q1 MAE=22.374, bias=-19.617 | Q4 MAE=28.836, bias=+19.501 | extreme/middle=1.331 | regression-to-mean-direction=True
+ARIMA(6,1,12)   H12: Q1 MAE=26.257, bias=-22.347 | Q4 MAE=34.727, bias=+25.829 | extreme/middle=1.333 | regression-to-mean-direction=True
+VAR(5)          H 1: Q1 MAE=15.790, bias=-12.406 | Q4 MAE=19.600, bias=+12.094 | extreme/middle=1.212 | regression-to-mean-direction=True
+VAR(5)          H 3: Q1 MAE=18.939, bias=-15.358 | Q4 MAE=24.750, bias=+15.342 | extreme/middle=1.316 | regression-to-mean-direction=True
+VAR(5)          H 6: Q1 MAE=21.691, bias=-17.924 | Q4 MAE=28.358, bias=+16.921 | extreme/middle=1.305 | regression-to-mean-direction=True
+VAR(5)          H12: Q1 MAE=24.255, bias=-19.010 | Q4 MAE=35.632, bias=+23.167 | extreme/middle=1.293 | regression-to-mean-direction=True
+
+CAUTELAS
+----------------------------------------------------------------------------------------------------------------
+- Los contrastes son pareados y se realizan sobre exactamente los mismos target timestamps por horizonte.
+- Los IC bootstrap preservan dependencia local mediante bloques circulares.
+- Los p-values DM-HAC son bilaterales y NO llevan corrección por comparaciones múltiples, por continuidad con el protocolo histórico establecido.
+- La interpretación final debe considerar conjuntamente magnitud del efecto, IC bootstrap, sensibilidad de bloques, DM-HAC y relevancia práctica.
+- Este análisis NO autoriza retuning ni sustitución de ningún representante frozen.
+
+GLOBAL RESULT
+----------------------------------------------------------------------------------------------------------------
+STATUS: PASS
+No model fitted: TRUE
+No model refitted: TRUE
+No tuning: TRUE
+No selection: TRUE

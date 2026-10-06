@@ -1,0 +1,199 @@
+{
+  "campaign_id": "DATA-SCALING-EXPLORATORY-001",
+  "runner_version": "1.0.0",
+  "runner_sha256": "b04f64aea65b7c81cba3d9bf99619c53b24258ca5417f28ef8ad29e976348966",
+  "status": "PASS",
+  "completed_utc": "2026-08-25T01:54:02.647189+00:00",
+  "campaign_seconds": 3868.867505396,
+  "governance": {
+    "031_phase_g_data_scaling_decision_2026-08-21.md": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/docs/project_governance/031_phase_g_data_scaling_decision_2026-08-21.md",
+      "sha256": "78723a948e6dc17e440622044e6eaa270077cae6d1ee7a38dd36524917d41bc1"
+    },
+    "055_post_phase_f_data_scaling_decision_2026-08-22.md": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/docs/project_governance/055_post_phase_f_data_scaling_decision_2026-08-22.md",
+      "sha256": "9d8ec6e54c2bda070f1a70e67fd8b4c1c0598369e6bddbd1deaf053047d1bd7e"
+    },
+    "071_phase_g_aggregation_final_closure_continuity_series_preparation_authorization_2026-08-25.md": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/docs/project_governance/071_phase_g_aggregation_final_closure_continuity_series_preparation_authorization_2026-08-25.md",
+      "sha256": "c30d65fae44bdb1ad110c878ae62b699f2fa32b124d20c32603c6a3e3ad3b34b"
+    },
+    "072_phase_g_continuity_boundary_incident_method_repair_authorization_2026-08-25.md": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/docs/project_governance/072_phase_g_continuity_boundary_incident_method_repair_authorization_2026-08-25.md",
+      "sha256": "ad5b57a7f34f031878d89e59195d858726003c75406615a1d25001589b815955"
+    },
+    "073_phase_g_continuity_series_v2_closure_scientific_protocol_freeze_2026-08-25.md": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/docs/project_governance/073_phase_g_continuity_series_v2_closure_scientific_protocol_freeze_2026-08-25.md",
+      "sha256": "c97bce8004f4b1be5357a6a09d8c81f9655147da9f9a85e51ed0eca2872bc6fb"
+    }
+  },
+  "execution_authorization": {
+    "path": "<COLAB_WORKDIR>/074_phase_g_scientific_runner_preflight_closure_data_scaling_execution_authorization_2026-08-25.md",
+    "sha256": "216bf95aea67ff6084b496f71d4fa088a25e2aaad90392067886af2a151f05f9"
+  },
+  "continuity_manifest": {
+    "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/results/metrics/phase_g/continuity_series_preparation/v2_2026-08-25/phase_g_continuity_series_preparation_v2_2026-08-25_manifest.json",
+    "sha256": "5423845bb70a85331d8b780fec883cfd74c175288872674240fb6054ab689f7c"
+  },
+  "inputs": {
+    "train_1w": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/data/processed/ugr16/phase_g/phase_g_train_1w_5min.parquet",
+      "sha256": "3bc5818663ce672dd1487bafd8f4e3aba40e122062602103ac9f4c37d3027363",
+      "rows": 2016,
+      "start": "2016-06-13T00:10:00",
+      "end": "2016-06-20T00:05:00"
+    },
+    "train_2w": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/data/processed/ugr16/phase_g/phase_g_train_2w_5min.parquet",
+      "sha256": "99e8783514ec0165919a6f230f4712a356446ad72fd3fa35eeeda8d254267977",
+      "rows": 4032,
+      "start": "2016-06-06T00:10:00",
+      "end": "2016-06-20T00:05:00"
+    },
+    "train_4w": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/data/processed/ugr16/phase_g/phase_g_train_4w_5min.parquet",
+      "sha256": "517dfd5d7f10d86556714059e6ba087490aed76f7f6ca93f3a7ae037fe735f94",
+      "rows": 8064,
+      "start": "2016-05-23T00:10:00",
+      "end": "2016-06-20T00:05:00"
+    },
+    "train_8w": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/data/processed/ugr16/phase_g/phase_g_train_8w_5min.parquet",
+      "sha256": "42e38d15929908a40dd5791fe6197b3128dcfad717716dc159ab0e3cf09279c5",
+      "rows": 16128,
+      "start": "2016-04-25T00:10:00",
+      "end": "2016-06-20T00:05:00"
+    },
+    "test_june_week4": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_full_execution_v1r1_unpack/phase_g_data_scaling_exec_v1_2026-08-25/data/processed/ugr16/phase_g/phase_g_test_june_week4_5min.parquet",
+      "sha256": "da91f61809f46ae208ddac24f1daa9a76d74934dddbdc7693c80287ed0134c7f",
+      "rows": 1947,
+      "start": "2016-06-20T00:10:00",
+      "end": "2016-06-26T18:20:00"
+    }
+  },
+  "environment": {
+    "python": "3.13.15",
+    "python_full": "3.13.15 (main, Aug  6 2026, 11:06:23) [GCC 11.4.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "numpy": "2.1.3",
+    "pandas": "2.2.3",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8",
+    "cudnn": 91900,
+    "cuda_available": true,
+    "cuda_device_count": 1,
+    "gpu_name": "Tesla T4",
+    "gpu_vram_bytes": 15637086208,
+    "statsmodels": "0.14.6",
+    "cublas_workspace_config": ":4096:8"
+  },
+  "device": "cuda",
+  "frozen_design": {
+    "histories_weeks": [
+      1,
+      2,
+      4,
+      8
+    ],
+    "history_rows": {
+      "1": 2016,
+      "2": 4032,
+      "4": 8064,
+      "8": 16128
+    },
+    "test_rows": 1947,
+    "test_start": "2016-06-20T00:10:00",
+    "test_end_exclusive": "2016-06-26T18:25:00",
+    "horizons": [
+      1,
+      3,
+      6,
+      12
+    ],
+    "expected_test_predictions": {
+      "1": 1947,
+      "3": 1945,
+      "6": 1942,
+      "12": 1936
+    },
+    "models": [
+      "Persistence",
+      "VAR*",
+      "RECURRENT*",
+      "TRANSFORMER*"
+    ],
+    "var": "VAR(5)",
+    "recurrent": {
+      "family": "GRU",
+      "config_id": "N06",
+      "lookback": 72,
+      "hidden_size": 64,
+      "n_layers": 2,
+      "dropout": 0.2,
+      "expected_parameter_count": 37889
+    },
+    "transformer": {
+      "config_id": "T01",
+      "lookback": 24,
+      "expected_parameter_count": 8705
+    },
+    "canonical_seed": 20260820,
+    "L_MAX": 288,
+    "inner_gap": 12,
+    "inner_early_stop_fraction": 0.2
+  },
+  "counts": {
+    "prediction_rows": 124320,
+    "metric_rows": 64,
+    "scaling_summary_rows": 64,
+    "runtime_rows": 40,
+    "neural_epoch_rows": 32,
+    "cell_status_rows": 40,
+    "failed_cells": 0
+  },
+  "assertions": {
+    "phase_a_to_f_modified": false,
+    "model_reselection": false,
+    "retuning": false,
+    "best_seed_selection": false,
+    "raw_tar_access": false
+  },
+  "artifacts": {
+    "predictions": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_predictions_v1_2026-08-25.parquet",
+      "sha256": "8a7f56025d67c311a6446ca2c872d7958bc9f91f0dc604d2df3f3e6c7dfc3513",
+      "bytes": 4626809
+    },
+    "metrics": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_metrics_v1_2026-08-25.csv",
+      "sha256": "b751b536e9053db79a4a6797edb21c2ed67fa8f8abdeab4a6df6b7777546774c",
+      "bytes": 13828
+    },
+    "scaling_summary": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_summary_v1_2026-08-25.csv",
+      "sha256": "f112c53b94f9ccf786d349f880c78bee9fb0ce295c29fc7dd9d7dd7b3dcb7657",
+      "bytes": 3509
+    },
+    "runtime": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_runtime_v1_2026-08-25.csv",
+      "sha256": "7167bb8039bff5043e714dd343b08bc652c8893915a3134d4d5512743027ad88",
+      "bytes": 5228
+    },
+    "neural_epoch_registry": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_neural_epoch_registry_v1_2026-08-25.csv",
+      "sha256": "b3abd5b55dd4c8fa8d588a1d19cea41b524aab1d3ed3c265afea36e88978de7f",
+      "bytes": 5355
+    },
+    "cell_status": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_cell_status_v1_2026-08-25.csv",
+      "sha256": "fe0c4c4ff562920465017bab6be694913f045218248bf9380be177688d1bb728",
+      "bytes": 926
+    },
+    "report": {
+      "path": "<COLAB_WORKDIR>/phase_g_data_scaling_scientific_outputs_v1/phase_g_data_scaling_report_v1_2026-08-25.txt",
+      "sha256": "e4eee5fad61e2dbabb5dd85f04e1c5badddb718f98efdf3e52317c26777882b4",
+      "bytes": 673
+    }
+  }
+}

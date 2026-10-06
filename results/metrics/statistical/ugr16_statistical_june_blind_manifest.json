@@ -1,0 +1,142 @@
+{
+  "campaign_id": "UGR16-STATISTICAL-MODELS-001",
+  "run_id": "UGR16-STATISTICAL-JUNE-BLIND-001",
+  "status": "PASS",
+  "created_at": "2026-08-16T22:05:06.971253+02:00",
+  "runner": {
+    "version": "1.0",
+    "path": "<PROJECT_ROOT>/src/models/run_ugr16_statistical_june_blind.py",
+    "sha256": "05d9a79adcb88b4b8eba820f9ee34a9800ced08579fefc649d6a7e7b218bbcd2",
+    "worker_isolation": true,
+    "checkpoint_resume": true,
+    "hard_timeout_seconds_per_candidate": 1800
+  },
+  "authorities": {
+    "freeze_008": {
+      "path": "docs/project_governance/008_statistical_final_representatives_freeze_2026-08-16.md",
+      "sha256": "cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a"
+    },
+    "april_final_representatives": {
+      "path": "results/metrics/ugr16_statistical_april_selection_final_representatives.csv",
+      "sha256": "39e0d0887c51df151176aa467f8b3c8ea53cc305405554b2006e327d3839e567"
+    },
+    "april_manifest": {
+      "path": "results/metrics/ugr16_statistical_april_selection_manifest.json",
+      "sha256": "a375004739240860d21448c3cb62309f72d63e7e9acddf9e7b59cbee280faf39"
+    },
+    "june_split_manifest": {
+      "path": "results/metrics/ugr16_final_split_manifest.json",
+      "sha256": "a641f0bf011c705cfb8fb25c9042a198461918b01dddb284644a309b783adb39"
+    }
+  },
+  "input": {
+    "path": "data/processed/ugr16/june_week3_prepared_5min.parquet",
+    "sha256": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3",
+    "rows": 2004
+  },
+  "split": {
+    "n_train": 1402,
+    "n_blind_test": 602,
+    "boundary": "2016-06-17T21:50:00",
+    "train_end": "2016-06-17T21:45:00",
+    "blind_start": "2016-06-17T21:50:00",
+    "refit_test": false,
+    "observed_update": true
+  },
+  "frozen_representatives": [
+    {
+      "family": "AR",
+      "config": "AR(24)",
+      "p": 24
+    },
+    {
+      "family": "MA",
+      "config": "MA(12)",
+      "p": 0,
+      "d": 0,
+      "q": 12
+    },
+    {
+      "family": "ARMA",
+      "config": "ARMA(24,3)",
+      "p": 24,
+      "d": 0,
+      "q": 3
+    },
+    {
+      "family": "ARIMA",
+      "config": "ARIMA(6,1,12)",
+      "p": 6,
+      "d": 1,
+      "q": 12
+    },
+    {
+      "family": "VAR",
+      "config": "VAR(5)",
+      "lag": 5
+    }
+  ],
+  "sarima_status": "NOT_EVALUABLE_WITHIN_FROZEN_RESOURCE_BUDGET",
+  "evaluation": {
+    "selection_performed": false,
+    "tuning_performed": false,
+    "substitution_allowed": false,
+    "score_role": "descriptive_only",
+    "primary_metric": "MAE",
+    "same_target_timestamps_required": true,
+    "coverage_required": 1.0
+  },
+  "horizons": {
+    "1": {
+      "minutes": 5,
+      "expected_predictions": 602
+    },
+    "3": {
+      "minutes": 15,
+      "expected_predictions": 600
+    },
+    "6": {
+      "minutes": 30,
+      "expected_predictions": 597
+    },
+    "12": {
+      "minutes": 60,
+      "expected_predictions": 591
+    }
+  },
+  "mase_scale_bps": 23463132.548712824,
+  "software": {
+    "python": "3.12.13",
+    "numpy": "2.5.2",
+    "pandas": "3.0.5",
+    "scipy": "1.18.0",
+    "statsmodels": "0.14.6",
+    "scikit_learn": "1.9.0",
+    "matplotlib": "3.11.1"
+  },
+  "artifacts": {
+    "results/metrics/ugr16_statistical_june_blind_candidate_summary.csv": "7489593258e5750c31d1b0546ad20a7ca9f818be99baa41d15d2ed459ebce3a6",
+    "results/metrics/ugr16_statistical_june_blind_metrics.csv": "7c61f308f71539f3bb8e8787c51e3cc85ee17440316db80ed5bdcafe241e52bf",
+    "results/metrics/ugr16_statistical_june_blind_descriptive_ranking.csv": "e46e40c10c5b8424156f8cb7bc50ad4984c6dc18aa919011335f4c40d3f59ac3",
+    "results/metrics/ugr16_statistical_june_blind_worst_intervals.csv": "e88952581eb4782690c638d1e253e5b07515d7bccd8ab58269d10997e5c1e220",
+    "results/metrics/ugr16_statistical_june_blind_report.txt": "8e65a479066a0bd1631562054f66c8426add04489514c62757be8e3fa9a69717",
+    "results/predictions/ugr16_statistical_june_blind_predictions.parquet": "21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353",
+    "results/predictions/ugr16_statistical_june_blind_predictions.csv": "c704ab80da8548b098b0d4841dcaf651c83dace361b91a97d36149895d28fd56",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_mae_horizon.png": "3030d66815273c57b3ea6dd0ee44e360d1703df107d299f5b5efe90edc3c1285",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_mae_horizon.pdf": "77ed4f019dc0e7f38e2705586271979d9ee4116d6bc88ea5b558112fb9301514",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_skill_horizon.png": "994289fe477f8f6a6d65a1dd43d06067882e2b1a8e1975214c4994b75dd2a55b",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_skill_horizon.pdf": "ded7e5375c614c081bc27fd5ba64a2012a6c5fbf8b0c912585f3257e7da9e590",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_mae_heatmap.png": "4e9e1ff789ab1fef920aec22391a6bca5b2a2f19734c2ce40f10045bbe4c9737",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_mae_heatmap.pdf": "67ac7b6bb52a959a6c9b1eea234b694e0b00caac87a5bc2f2ef04c484d93328f",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_bias_horizon.png": "305547da5b1e64051cfab5a8558c17eacba6d6763ebf136c9cb6f5429acac52c",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_bias_horizon.pdf": "76a9c1a4a063582f88588cb51d646e57faf0b0ff1890e16dd794049d541a5b87",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_p95_abs_error_horizon.png": "c64ffc3f6c456ff525da6705b037c1c988551ad33d95b842100d3698111b24d3",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_p95_abs_error_horizon.pdf": "426adb51ee9bad97b7e4ade2492cb4221461072f4ce8d369347193bea262a03b",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_underprediction_horizon.png": "76f3b3faf272d26b048f8e3f0fbd8f317138c4ac36961e455a31807ec55fda52",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_underprediction_horizon.pdf": "33dac26bce99e845dca0e8730c308d48b74d5f3ebd83e7ebba2d6d8ac72b4801",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_score_descriptive.png": "22ac20294d828b48583427a78109edcf1f3231745aecca9a15f973d9e57fd72c",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_score_descriptive.pdf": "d20d3d7a69f3cc6be66529d0ded00936740293dc65cd13a68fffd8608e10972b",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_best_score_observed_h1.png": "f3f8fba645093bd2f4a776d32bad698623ed36402d630011e1126b24e1485e3b",
+    "results/figures/ugr16_statistical_june_blind/ugr16_statistical_june_blind_best_score_observed_h1.pdf": "425accb90b8b19b90e587991696f774129b05c24f64a4da647f8bfd902878b6d"
+  }
+}

@@ -1,0 +1,4 @@
+family,candidate_id,tree_star,score_june_descriptive,total_fit_seconds,total_predict_seconds,total_serialized_model_bytes,selection_changed,descriptive_rank
+lightgbm,LGB01,True,1.8932316768441653,0.4492109389975667,0.018878697010222822,579982,False,1
+random_forest,RF01,False,1.9374683667658408,12.033915849999175,0.5896590919874143,3989794,False,2
+xgboost,XGB06,False,2.3107445708120435,1.550796186995285,0.015011697993031703,1405237,False,3

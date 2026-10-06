@@ -1,0 +1,88 @@
+==============================================================================================================================
+TRANSFORMER-INFERENCE-RESIDUALS-001 — INFERENCIA PAREADA Y DIAGNÓSTICO RESIDUAL JUNE
+==============================================================================================================================
+Runner version:                 1.0.0
+Runner SHA-256:                 19a0b3ef3b361aa1a57e12de37255061e47ce62e2f892e36c3767a0a0635fe8f
+
+GOBERNANZA
+------------------------------------------------------------------------------------------------------------------------------
+Reentrenamiento:                NO
+Refit:                          NO
+Tuning:                         NO
+Selección:                      NO
+Predicciones fuente modificadas:NO
+TRANSFORMER*:                   T01/L24
+RECURRENT*:                     GRU/N06
+ARIMA*:                         ARIMA(6,1,12)
+VAR*:                           VAR(5)
+TREE*:                          LGB01
+
+INPUTS
+------------------------------------------------------------------------------------------------------------------------------
+033 SHA-256:                    4fcd61519612ae5fd3daa6d874a73df50b27b63531ac109f0782351875211552
+044 SHA-256:                    2e32b0989c90a0af5558c86cac5367d75a7c5cc61b7ff2b0dc5b183ef14bf532
+028 SHA-256:                    26379146225af9f0e804696e518cb31e81d4060614d96d1fdff4494cfec19e82
+021 SHA-256:                    445ec43095bbf503d0a0ea45a2a209916fd705a0f197bb9b1961db2aeae74426
+008 SHA-256:                    cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a
+010 SHA-256:                    aeb527f1c7966cb91aeececd67d2da8e1f114236608e09296d9885ad1de0f530
+Transformer predictions SHA:    7195fd3c656a0f34a40a8bbc29d262593c9de8fff6c4f3bc4c2c0b90c11cf750
+Recurrent predictions SHA:      a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19
+Tree manifest SHA:              f0a296c21b3077b2f9c8788fbb118572a203021ae69074bb1a4a2b027f3d2b46
+Tree predictions SHA:           7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad
+Stat manifest SHA:              847f877144f2932e0b5967b1de0678898cb640434dbfb20f2f9805d7c29883a7
+Stat predictions SHA:           21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353
+Stat model column:              config
+
+INFERENCIA
+------------------------------------------------------------------------------------------------------------------------------
+Loss:                           absolute error
+Differential:                   reference - TRANSFORMER*
+Positive:                       TRANSFORMER* improves
+Bootstrap repetitions:          5000
+Primary block:                  12
+Sensitivity blocks:             6 / 12 / 24
+Confidence:                     0.95
+Random seed:                    20260717
+DM-HAC kernel:                  Bartlett
+DM-HAC lag:                     12 in H1/H3/H6/H12
+P-values:                       two-sided / unadjusted
+Multiple-testing correction:    NONE
+Primary comparisons:             20
+
+CONTRASTES PRIMARIOS
+------------------------------------------------------------------------------------------------------------------------------
+transformer_vs_arima         H1  | TRANSFORMER* vs ARIMA* | improvement=-3.5686 Mbit/s | CI=[-5.5208, -1.8453] | P(improve)=0.0000 | DM-HAC p=0.000230054 | bootstrap=reference_better
+transformer_vs_arima         H3  | TRANSFORMER* vs ARIMA* | improvement=-4.7551 Mbit/s | CI=[-7.5177, -2.2896] | P(improve)=0.0000 | DM-HAC p=0.000510423 | bootstrap=reference_better
+transformer_vs_arima         H6  | TRANSFORMER* vs ARIMA* | improvement=-8.8073 Mbit/s | CI=[-12.8929, -4.7459] | P(improve)=0.0000 | DM-HAC p=4.15198e-05 | bootstrap=reference_better
+transformer_vs_arima         H12 | TRANSFORMER* vs ARIMA* | improvement=-10.7066 Mbit/s | CI=[-15.5219, -5.8293] | P(improve)=0.0000 | DM-HAC p=2.75401e-05 | bootstrap=reference_better
+transformer_vs_persistence   H1  | TRANSFORMER* vs Persistence | improvement=-2.4691 Mbit/s | CI=[-4.7136, -0.4094] | P(improve)=0.0082 | DM-HAC p=0.0283219 | bootstrap=reference_better
+transformer_vs_persistence   H3  | TRANSFORMER* vs Persistence | improvement=-2.9602 Mbit/s | CI=[-5.8417, -0.3972] | P(improve)=0.0118 | DM-HAC p=0.0405108 | bootstrap=reference_better
+transformer_vs_persistence   H6  | TRANSFORMER* vs Persistence | improvement=-7.3375 Mbit/s | CI=[-11.7037, -3.2334] | P(improve)=0.0000 | DM-HAC p=0.000905923 | bootstrap=reference_better
+transformer_vs_persistence   H12 | TRANSFORMER* vs Persistence | improvement=-9.5164 Mbit/s | CI=[-14.4886, -4.7656] | P(improve)=0.0000 | DM-HAC p=0.000273855 | bootstrap=reference_better
+transformer_vs_recurrent     H1  | TRANSFORMER* vs RECURRENT* | improvement=+0.3242 Mbit/s | CI=[-0.5922, +1.2021] | P(improve)=0.7560 | DM-HAC p=0.48882 | bootstrap=not_distinguishable
+transformer_vs_recurrent     H3  | TRANSFORMER* vs RECURRENT* | improvement=-1.4680 Mbit/s | CI=[-3.1476, +0.1976] | P(improve)=0.0428 | DM-HAC p=0.0995553 | bootstrap=not_distinguishable
+transformer_vs_recurrent     H6  | TRANSFORMER* vs RECURRENT* | improvement=+7.6658 Mbit/s | CI=[+2.9555, +12.3855] | P(improve)=1.0000 | DM-HAC p=0.00196963 | bootstrap=model_better
+transformer_vs_recurrent     H12 | TRANSFORMER* vs RECURRENT* | improvement=+14.2972 Mbit/s | CI=[+6.8442, +21.9040] | P(improve)=1.0000 | DM-HAC p=0.000335625 | bootstrap=model_better
+transformer_vs_tree          H1  | TRANSFORMER* vs TREE* | improvement=+5.7713 Mbit/s | CI=[+3.3653, +8.3228] | P(improve)=1.0000 | DM-HAC p=9.30101e-06 | bootstrap=model_better
+transformer_vs_tree          H3  | TRANSFORMER* vs TREE* | improvement=+16.0715 Mbit/s | CI=[+11.0038, +21.1334] | P(improve)=1.0000 | DM-HAC p=2.29853e-09 | bootstrap=model_better
+transformer_vs_tree          H6  | TRANSFORMER* vs TREE* | improvement=+20.3316 Mbit/s | CI=[+13.6577, +27.1197] | P(improve)=1.0000 | DM-HAC p=1.008e-08 | bootstrap=model_better
+transformer_vs_tree          H12 | TRANSFORMER* vs TREE* | improvement=+19.5979 Mbit/s | CI=[+9.8281, +29.4574] | P(improve)=1.0000 | DM-HAC p=0.000133843 | bootstrap=model_better
+transformer_vs_var           H1  | TRANSFORMER* vs VAR* | improvement=-3.6129 Mbit/s | CI=[-5.6614, -1.8492] | P(improve)=0.0000 | DM-HAC p=0.000425019 | bootstrap=reference_better
+transformer_vs_var           H3  | TRANSFORMER* vs VAR* | improvement=-5.0189 Mbit/s | CI=[-7.7997, -2.4526] | P(improve)=0.0000 | DM-HAC p=0.000419845 | bootstrap=reference_better
+transformer_vs_var           H6  | TRANSFORMER* vs VAR* | improvement=-9.1338 Mbit/s | CI=[-13.4305, -5.1611] | P(improve)=0.0000 | DM-HAC p=2.53952e-05 | bootstrap=reference_better
+transformer_vs_var           H12 | TRANSFORMER* vs VAR* | improvement=-10.8438 Mbit/s | CI=[-15.6023, -5.9185] | P(improve)=0.0000 | DM-HAC p=2.22269e-05 | bootstrap=reference_better
+
+RESIDUOS — TRANSFORMER*
+------------------------------------------------------------------------------------------------------------------------------
+H1  | MAE=19.7678 | RMSE=26.4012 | bias=-6.0887 | underpred=41.36% | P95=54.0799 Mbit/s
+H3  | MAE=24.2441 | RMSE=30.9189 | bias=-8.9639 | underpred=37.50% | P95=61.8942 Mbit/s
+H6  | MAE=31.2307 | RMSE=38.3021 | bias=-21.5333 | underpred=23.28% | P95=71.3072 Mbit/s
+H12 | MAE=37.3941 | RMSE=44.9582 | bias=-28.5658 | underpred=18.44% | P95=84.6962 Mbit/s
+
+Runtime seconds:                5.712
+STATUS:                         PASS
+SOURCE PREDICTIONS MODIFIED:    NO
+SELECTION CHANGED:              NO
+TRAINING/REFIT/TUNING:          NO
+TRANSFORMER-CLOSURE-001:        NOT RUN
+PHASE F:                        NOT STARTED

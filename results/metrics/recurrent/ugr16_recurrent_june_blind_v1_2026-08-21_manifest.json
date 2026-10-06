@@ -1,0 +1,279 @@
+{
+  "campaign_id": "RECURRENT-JUNE-BLIND-001",
+  "parent_campaign_id": "UGR16-RECURRENT-NETWORKS-001",
+  "status": "PASS",
+  "runner": {
+    "name": "run_recurrent_june_blind_v1_2026-08-21.py",
+    "version": "1.0.0",
+    "sha256": "a495010700eae4de88b2101d7326bc6590f78c7af120c578293565d797eeba0e"
+  },
+  "bundle_manifest": {
+    "bundle_id": "PHASE-D-RECURRENT-JUNE-BLIND-EXEC-BUNDLE-V1-2026-08-21",
+    "campaign_id": "RECURRENT-JUNE-BLIND-001",
+    "campaign_purpose": "final blind external evaluation of frozen recurrent representatives",
+    "status": "PRE-EXECUTION / FROZEN_INPUT_BUNDLE",
+    "created_date": "2026-08-21",
+    "authorities": {
+      "023": {
+        "name": "023_recurrent_networks_protocol_2026-08-20.md",
+        "sha256": "af9d0d5984fd5e98c6660227f7bd98e246dbf934ad8df416439c2fd5bb59b174"
+      },
+      "024": {
+        "name": "024_recurrent_march_screen_closure_2026-08-20.md",
+        "sha256": "f877831a0078eb1dd57bbc10e245e2bb19064d4da24630c3853b4b4e58399c9f"
+      },
+      "025": {
+        "name": "025_recurrent_april_selection_closure_2026-08-20.md",
+        "sha256": "21c14840ea6a67fba52f6dbb114221e0b48cc62dafb1a2039201f37829093cb2"
+      },
+      "026": {
+        "name": "026_recurrent_stability_closure_2026-08-20.md",
+        "sha256": "329c3068fb60f97789cc3b973ec0a13e4c6770d95706ac2688f8017fa78f289f"
+      },
+      "027": {
+        "name": "027_recurrent_freeze_2026-08-20.md",
+        "sha256": "27d7e96fdbc8575f241638eb817a31f28673cf512d30dfac8efb34835bf41de4"
+      }
+    },
+    "june": {
+      "name": "june_week3_prepared_5min.parquet",
+      "sha256": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3",
+      "rows": 2004,
+      "columns": 32,
+      "coverage": {
+        "start": "2016-06-13 01:00:00",
+        "end": "2016-06-19 23:55:00"
+      },
+      "train_rows": 1402,
+      "train_end": "2016-06-17 21:45:00",
+      "blind_rows": 602,
+      "blind_start": "2016-06-17 21:50:00"
+    },
+    "evidence": {
+      "representatives": {
+        "name": "ugr16_recurrent_april_selection_v1_2026-08-20_representatives.csv",
+        "sha256": "1cb3ee5ba20bb7e11fef2b736db50adb5edf515bc815a0396df5096b08e73a1b"
+      },
+      "stability_summary": {
+        "name": "ugr16_recurrent_stability_v1_2026-08-20_summary.csv",
+        "sha256": "2d86057330992f73bbee728c904e2f5c549dde6c996fb4247964db9e44c35a82"
+      }
+    },
+    "runner": {
+      "name": "run_recurrent_june_blind_v1_2026-08-21.py",
+      "version": "1.0.0",
+      "sha256": "a495010700eae4de88b2101d7326bc6590f78c7af120c578293565d797eeba0e"
+    },
+    "frozen_configuration": {
+      "canonical_seed": 20260820,
+      "representatives": {
+        "RNN_star": "SimpleRNN/N03",
+        "LSTM_star": "LSTM/N04",
+        "GRU_star": "GRU/N06",
+        "RECURRENT_star": "GRU/N06"
+      },
+      "horizons": {
+        "H1": "5 min",
+        "H3": "15 min",
+        "H6": "30 min",
+        "H12": "60 min"
+      },
+      "L_MAX": 288,
+      "strategy": "direct independent model per horizon"
+    },
+    "expected_fit_plan": {
+      "representative_horizon_combinations": 12,
+      "inner_epoch_selection_fits": 12,
+      "final_refits": 12,
+      "total_training_stages": 24,
+      "canonical_seed_for_all_training": 20260820,
+      "best_seed_selection": false,
+      "retuning": false
+    },
+    "blind_split": {
+      "train_rows": 1402,
+      "blind_rows": 602,
+      "blind_start": "2016-06-17 21:50:00",
+      "expected_prediction_counts": {
+        "H1": 602,
+        "H3": 600,
+        "H6": 597,
+        "H12": 591
+      },
+      "expected_total_prediction_rows": 7170
+    },
+    "pre_execution_assertions": {
+      "training_executed": false,
+      "blind_predictions_generated": false,
+      "selection_allowed": false,
+      "representative_changes_allowed": false,
+      "best_seed_selection_allowed": false,
+      "retuning_allowed": false,
+      "blind_targets_may_affect_fitting": false
+    }
+  },
+  "authorities": {
+    "023": {
+      "name": "023_recurrent_networks_protocol_2026-08-20.md",
+      "sha256": "af9d0d5984fd5e98c6660227f7bd98e246dbf934ad8df416439c2fd5bb59b174"
+    },
+    "024": {
+      "name": "024_recurrent_march_screen_closure_2026-08-20.md",
+      "sha256": "f877831a0078eb1dd57bbc10e245e2bb19064d4da24630c3853b4b4e58399c9f"
+    },
+    "025": {
+      "name": "025_recurrent_april_selection_closure_2026-08-20.md",
+      "sha256": "21c14840ea6a67fba52f6dbb114221e0b48cc62dafb1a2039201f37829093cb2"
+    },
+    "026": {
+      "name": "026_recurrent_stability_closure_2026-08-20.md",
+      "sha256": "329c3068fb60f97789cc3b973ec0a13e4c6770d95706ac2688f8017fa78f289f"
+    },
+    "027": {
+      "name": "027_recurrent_freeze_2026-08-20.md",
+      "sha256": "27d7e96fdbc8575f241638eb817a31f28673cf512d30dfac8efb34835bf41de4"
+    }
+  },
+  "inputs": {
+    "june": {
+      "name": "june_week3_prepared_5min.parquet",
+      "sha256": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3",
+      "rows": 2004,
+      "coverage": [
+        "2016-06-13 01:00:00",
+        "2016-06-19 23:55:00"
+      ],
+      "train_rows": 1402,
+      "blind_rows": 602,
+      "blind_start": "2016-06-17 21:50:00"
+    },
+    "representatives": {
+      "name": "ugr16_recurrent_april_selection_v1_2026-08-20_representatives.csv",
+      "sha256": "1cb3ee5ba20bb7e11fef2b736db50adb5edf515bc815a0396df5096b08e73a1b"
+    },
+    "stability_summary": {
+      "name": "ugr16_recurrent_stability_v1_2026-08-20_summary.csv",
+      "sha256": "2d86057330992f73bbee728c904e2f5c549dde6c996fb4247964db9e44c35a82"
+    }
+  },
+  "software": {
+    "python": "3.12.13",
+    "python_full": "3.12.13 (main, Mar  4 2026, 09:23:07) [GCC 11.4.0]",
+    "platform": "Linux-6.6.122+-x86_64-with-glibc2.35",
+    "torch": "2.11.0+cu128",
+    "torch_cuda": "12.8",
+    "cudnn": 91900,
+    "numpy": "2.0.2",
+    "pandas": "2.2.3",
+    "cuda_available": true,
+    "device_count": 1,
+    "gpu_name": "Tesla T4",
+    "gpu_vram_bytes": 15637086208,
+    "cublas_workspace_config": ":4096:8"
+  },
+  "frozen_configuration": {
+    "canonical_seed": 20260820,
+    "representatives": {
+      "RNN_star": {
+        "family": "SimpleRNN",
+        "config_id": "N03"
+      },
+      "LSTM_star": {
+        "family": "LSTM",
+        "config_id": "N04"
+      },
+      "GRU_star": {
+        "family": "GRU",
+        "config_id": "N06"
+      },
+      "RECURRENT_star": {
+        "family": "GRU",
+        "config_id": "N06"
+      }
+    },
+    "horizons": [
+      1,
+      3,
+      6,
+      12
+    ],
+    "L_MAX": 288,
+    "optimizer": "Adam",
+    "learning_rate": 0.001,
+    "loss": "L1Loss",
+    "batch_size": 32,
+    "max_epochs": 150,
+    "patience": 15,
+    "min_delta": 0.0,
+    "gradient_clip_norm": 1.0,
+    "shuffle": false,
+    "inner_gap": 12,
+    "inner_early_stop_fraction": 0.2,
+    "final_refit_uses_complete_training_block_scaler": true,
+    "final_refit_exact_best_epoch": true,
+    "blind_online_weight_updates": false,
+    "blind_real_observations_as_revealed_lags": true
+  },
+  "campaign": {
+    "inner_epoch_selection_fits": 12,
+    "final_refits": 12,
+    "total_training_stages": 24,
+    "blind_model_horizon_evaluations": 12,
+    "blind_prediction_rows": 7170,
+    "expected_counts_per_horizon": {
+      "1": 602,
+      "3": 600,
+      "6": 597,
+      "12": 591
+    },
+    "representatives_changed": false,
+    "best_seed_selection": false,
+    "retuning": false,
+    "blind_targets_used_for_fitting": false
+  },
+  "validation": {
+    "runtime_rows_12": true,
+    "epoch_selection_rows_12": true,
+    "all_runtime_status_pass": true,
+    "horizon_metric_rows_12": true,
+    "blind_prediction_rows_expected": true,
+    "finite_predictions": true,
+    "representatives_unchanged": true,
+    "canonical_seed_unchanged": true,
+    "no_best_seed_selection": true,
+    "no_retuning": true,
+    "june_hash_unchanged": true,
+    "protocol_hash_unchanged": true,
+    "freeze_hash_unchanged": true,
+    "representatives_hash_unchanged": true,
+    "stability_summary_hash_unchanged": true
+  },
+  "campaign_seconds": 140.07800997299998,
+  "outputs": {
+    "runtime": {
+      "name": "ugr16_recurrent_june_blind_v1_2026-08-21_runtime.csv",
+      "sha256": "48207e57d72538e5409217f622170ed9152ac7e22cf0d7e2d5415c6dc84f8852",
+      "bytes": 2056
+    },
+    "epoch_selection": {
+      "name": "ugr16_recurrent_june_blind_v1_2026-08-21_epoch_selection.csv",
+      "sha256": "b8bae8fd6d2ef5fcbd582efe56864a9d8819703eaa0b4d275aa8bf8e8dc693e9",
+      "bytes": 1375
+    },
+    "predictions": {
+      "name": "ugr16_recurrent_june_blind_v1_2026-08-21_predictions.parquet",
+      "sha256": "a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19",
+      "bytes": 287431
+    },
+    "horizon_metrics": {
+      "name": "ugr16_recurrent_june_blind_v1_2026-08-21_horizon_metrics.csv",
+      "sha256": "6fab55085504a2b36bce238646ff6aee81a9f61e7f1062788450d412355a92f5",
+      "bytes": 2952
+    },
+    "report": {
+      "name": "ugr16_recurrent_june_blind_v1_2026-08-21_report.txt",
+      "sha256": "dd71c50a2d176c902377a1cb87e94ed71adb0b36f362b42e1876f41e2dfda9d7",
+      "bytes": 3812
+    }
+  }
+}

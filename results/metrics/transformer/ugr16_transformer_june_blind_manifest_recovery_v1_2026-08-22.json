@@ -1,0 +1,232 @@
+{
+  "recovery_id": "TRANSFORMER-JUNE-BLIND-POSTRUN-RECOVERY-001",
+  "recovery_version": "1.0.0",
+  "date_tag": "2026-08-22",
+  "campaign_id": "TRANSFORMER-JUNE-BLIND-001",
+  "status": "SCIENTIFIC_OUTPUTS_PASS_RECOVERED_POSTRUN",
+  "incident": {
+    "stage": "post-training aggregate validation before scientific manifest packaging",
+    "original_runner_return_code": 1,
+    "exception": "RuntimeError: all final validations PASS: FAIL",
+    "root_cause": "The validation dictionary intentionally stored blind_targets_used_for_fitting=False, but the aggregate gate used all(validation.values()). The expected False safeguard was therefore misclassified as an aggregate failure.",
+    "scientific_execution_completed_before_failure": true,
+    "training_rerun": false,
+    "blind_prediction_rerun": false,
+    "scientific_outputs_modified": false
+  },
+  "authority": {
+    "bundle": {
+      "name": "phase_e_transformer_june_blind_exec_v2_2026-08-22.zip",
+      "sha256": "9f038b50b5f93722e1e8bda9c0708cbd09accb24f361c6126d178ffd29ef2a92"
+    },
+    "runner": {
+      "name": "run_transformer_june_blind_v2_2026-08-22.py",
+      "sha256": "fda523c8ecede8085e4fffc05dddef280308c8aa9e263bcc20c14091c2943fa1"
+    },
+    "preexecution_manifest": {
+      "name": "phase_e_transformer_june_blind_exec_bundle_manifest_v2_2026-08-22.json",
+      "sha256": "50348ece41073850acf57c7c622e9d6085a074aa70c789805d3abd53475d0b5c"
+    },
+    "closure_043": {
+      "name": "043_transformer_june_blind_preflight_closure_2026-08-22.md",
+      "sha256": "797c94fef0f6b5d43af61d3f5df4f712edf168a7edccf7694bd3124feb9cbf5d"
+    },
+    "freeze_manifest": {
+      "name": "transformer_pre_june_freeze_manifest_v1_2026-08-22.json",
+      "sha256": "42f996fed2698e5f87e3feb9965e3155cc7331f86b6598f1b9f8fa4c2746182e"
+    },
+    "june": {
+      "name": "june_week3_prepared_5min.parquet",
+      "sha256": "d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3"
+    }
+  },
+  "scientific_execution": {
+    "transformer_star": {
+      "config_id": "T01",
+      "lookback": 24
+    },
+    "canonical_seed": 20260820,
+    "training_stages": 8,
+    "inner_epoch_selection_fits": 4,
+    "final_refits": 4,
+    "best_epochs": {
+      "H1": 13,
+      "H3": 16,
+      "H6": 3,
+      "H12": 4
+    },
+    "blind_prediction_rows": 2390,
+    "horizon_metric_rows": 4,
+    "expected_counts_per_horizon": {
+      "1": 602,
+      "3": 600,
+      "6": 597,
+      "12": 591
+    },
+    "transformer_star_changed": false,
+    "best_seed_selection": false,
+    "retuning": false,
+    "blind_targets_used_for_fitting": false,
+    "blind_metrics": [
+      {
+        "horizon_steps": 1,
+        "n_predictions": 602,
+        "best_epoch": 13,
+        "mae_bps": 19767802.72587378,
+        "rmse_bps": 26401169.625433672,
+        "smape_pct": 14.053975995449235,
+        "mase": 0.842504839659964,
+        "persistence_mae_bps": 17298749.50285714,
+        "mae_ratio_vs_persistence": 1.1427301564548835,
+        "skill_vs_persistence": -0.1427301564548835,
+        "bias_bps": -6088674.055643596,
+        "underprediction_pct": 41.36212624584717,
+        "p95_abs_error_bps": 54079878.717119895
+      },
+      {
+        "horizon_steps": 3,
+        "n_predictions": 600,
+        "best_epoch": 16,
+        "mae_bps": 24244138.59811761,
+        "rmse_bps": 30918887.139711484,
+        "smape_pct": 16.996301679228974,
+        "mase": 1.033286520791003,
+        "persistence_mae_bps": 21283933.096266672,
+        "mae_ratio_vs_persistence": 1.1390816954959408,
+        "skill_vs_persistence": -0.1390816954959408,
+        "bias_bps": -8963918.3117504,
+        "underprediction_pct": 37.5,
+        "p95_abs_error_bps": 61894168.411681086
+      },
+      {
+        "horizon_steps": 6,
+        "n_predictions": 597,
+        "best_epoch": 3,
+        "mae_bps": 31230690.194712844,
+        "rmse_bps": 38302092.61476192,
+        "smape_pct": 21.36887905249591,
+        "mase": 1.331053734188027,
+        "persistence_mae_bps": 23893209.758257955,
+        "mae_ratio_vs_persistence": 1.307094798509393,
+        "skill_vs_persistence": -0.307094798509393,
+        "bias_bps": -21533307.903076064,
+        "underprediction_pct": 23.28308207705193,
+        "p95_abs_error_bps": 71307236.24252862
+      },
+      {
+        "horizon_steps": 12,
+        "n_predictions": 591,
+        "best_epoch": 4,
+        "mae_bps": 37394071.34659872,
+        "rmse_bps": 44958183.220612966,
+        "smape_pct": 24.7556999731069,
+        "mase": 1.5937373779465838,
+        "persistence_mae_bps": 27877667.50258319,
+        "mae_ratio_vs_persistence": 1.3413629868113508,
+        "skill_vs_persistence": -0.3413629868113508,
+        "bias_bps": -28565786.938060973,
+        "underprediction_pct": 18.44331641285956,
+        "p95_abs_error_bps": 84696157.91218093
+      }
+    ]
+  },
+  "independent_recovery_audit": {
+    "metric_recomputation": {
+      "H1": {
+        "n_predictions": true,
+        "mae_bps": true,
+        "persistence_mae_bps": true,
+        "mae_ratio_vs_persistence": true,
+        "skill_vs_persistence": true,
+        "rmse_bps": true,
+        "smape_pct": true,
+        "mase": true,
+        "bias_bps": true,
+        "underprediction_pct": true,
+        "p95_abs_error_bps": true
+      },
+      "H3": {
+        "n_predictions": true,
+        "mae_bps": true,
+        "persistence_mae_bps": true,
+        "mae_ratio_vs_persistence": true,
+        "skill_vs_persistence": true,
+        "rmse_bps": true,
+        "smape_pct": true,
+        "mase": true,
+        "bias_bps": true,
+        "underprediction_pct": true,
+        "p95_abs_error_bps": true
+      },
+      "H6": {
+        "n_predictions": true,
+        "mae_bps": true,
+        "persistence_mae_bps": true,
+        "mae_ratio_vs_persistence": true,
+        "skill_vs_persistence": true,
+        "rmse_bps": true,
+        "smape_pct": true,
+        "mase": true,
+        "bias_bps": true,
+        "underprediction_pct": true,
+        "p95_abs_error_bps": true
+      },
+      "H12": {
+        "n_predictions": true,
+        "mae_bps": true,
+        "persistence_mae_bps": true,
+        "mae_ratio_vs_persistence": true,
+        "skill_vs_persistence": true,
+        "rmse_bps": true,
+        "smape_pct": true,
+        "mase": true,
+        "bias_bps": true,
+        "underprediction_pct": true,
+        "p95_abs_error_bps": true
+      }
+    },
+    "june_mase_scale": 23463132.548712824,
+    "all_predictions_finite": true,
+    "all_target_pairings_exact": true,
+    "all_persistence_pairings_exact": true
+  },
+  "original_scientific_artifacts": {
+    "ugr16_transformer_june_blind_runtime_v2_2026-08-22.csv": {
+      "sha256": "31531954b84de4a3847e85b5252e5b05611c0cfb7bf7328aad779f48786ca153",
+      "bytes": 757
+    },
+    "ugr16_transformer_june_blind_epoch_selection_v2_2026-08-22.csv": {
+      "sha256": "49a9ae5018a4b22c8357c17d67719efe8fa8672a0b7c5fc7a6585ede9d417922",
+      "bytes": 584
+    },
+    "ugr16_transformer_june_blind_predictions_v2_2026-08-22.parquet": {
+      "sha256": "7195fd3c656a0f34a40a8bbc29d262593c9de8fff6c4f3bc4c2c0b90c11cf750",
+      "bytes": 134898
+    },
+    "ugr16_transformer_june_blind_horizon_metrics_v2_2026-08-22.csv": {
+      "sha256": "411f167b8ff78a5df4a91055a0a3206d99a82c2606bb545560fde9aebe6d6075",
+      "bytes": 1081
+    },
+    "ugr16_transformer_june_blind_report_v2_2026-08-22.txt": {
+      "sha256": "825664671e6618d355621ae781c456f6724dfa710aaf153eff59b0ba5fdd81a5",
+      "bytes": 1942
+    }
+  },
+  "recovery_script": {
+    "name": "recover_transformer_june_blind_postrun_v1_2026-08-22.py",
+    "sha256": "a644938691436c29ca688035859d7f95603301d406d57a2b2904c3856e6824d6"
+  },
+  "governance": {
+    "training_rerun": false,
+    "blind_prediction_rerun": false,
+    "scientific_outputs_modified": false,
+    "transformer_star_changed": false,
+    "best_seed_selected": false,
+    "retuning": false,
+    "blind_target_driven_fitting": false,
+    "inference_residuals_run": false,
+    "transformer_closure_run": false,
+    "phase_f_started": false,
+    "phase_g_authorized": false
+  }
+}

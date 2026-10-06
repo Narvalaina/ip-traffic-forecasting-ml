@@ -1,0 +1,43 @@
+==============================================================================================================================
+TRANSFORMER-JUNE-BLIND-001 — REPORT
+==============================================================================================================================
+Runner version: 2.0.0
+Runner SHA-256: fda523c8ecede8085e4fffc05dddef280308c8aa9e263bcc20c14091c2943fa1
+042 SHA-256: 341050a9f41856792572764153ba75b1706b6ffad3252215d519b078f11531b0
+Freeze manifest SHA-256: 42f996fed2698e5f87e3feb9965e3155cc7331f86b6598f1b9f8fa4c2746182e
+
+GOVERNANCE
+June role: final blind external evaluation
+TRANSFORMER* changed: NO
+Best-seed selection: NO
+Retuning: NO
+Canonical seed: 20260820
+Blind-target-driven fitting: NO
+
+FROZEN TRANSFORMER*
+config_id = T01
+lookback = 24
+trainable parameters = 8705
+
+JUNE SPLIT
+train rows = 1402
+blind rows = 602
+blind starts = 2016-06-17 21:50:00
+
+BLIND METRICS
+T01 L24 H1  n=602 best_epoch=13 MAE=19767802.725874 RMSE=26401169.625434 ratio_vs_Persistence=1.142730156 skill=-0.142730156 bias=-6088674.055644 underpred_pct=41.362126 P95=54079878.717120
+T01 L24 H3  n=600 best_epoch=16 MAE=24244138.598118 RMSE=30918887.139711 ratio_vs_Persistence=1.139081695 skill=-0.139081695 bias=-8963918.311750 underpred_pct=37.500000 P95=61894168.411681
+T01 L24 H6  n=597 best_epoch=3 MAE=31230690.194713 RMSE=38302092.614762 ratio_vs_Persistence=1.307094799 skill=-0.307094799 bias=-21533307.903076 underpred_pct=23.283082 P95=71307236.242529
+T01 L24 H12 n=591 best_epoch=4 MAE=37394071.346599 RMSE=44958183.220613 ratio_vs_Persistence=1.341362987 skill=-0.341362987 bias=-28565786.938061 underpred_pct=18.443316 P95=84696157.912181
+
+Runtime rows: 4
+Epoch-selection rows: 4
+Horizon metric rows: 4
+Blind prediction rows: 2390
+Campaign seconds: 28.991
+STATUS: PASS
+TRANSFORMER* CHANGED: NO
+BEST SEED SELECTED: NO
+RETUNING: NO
+TRANSFORMER-INFERENCE-RESIDUALS-001: NOT RUN
+TRANSFORMER-CLOSURE-001: NOT RUN

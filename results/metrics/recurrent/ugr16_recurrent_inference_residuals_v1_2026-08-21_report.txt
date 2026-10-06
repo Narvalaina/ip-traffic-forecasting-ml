@@ -1,0 +1,96 @@
+==============================================================================================================================
+RECURRENT-INFERENCE-RESIDUALS-001 — INFERENCIA PAREADA Y DIAGNÓSTICO RESIDUAL JUNE
+==============================================================================================================================
+Runner version:                 1.0.0
+Runner SHA-256:                 7ac750424a0013b0ab906826713afad50af7455ac8ffb7727de7a54150b8cb16
+
+GOBERNANZA
+------------------------------------------------------------------------------------------------------------------------------
+Reentrenamiento:                NO
+Refit:                          NO
+Tuning:                         NO
+Selección:                      NO
+Predicciones fuente modificadas:NO
+RNN* / LSTM* / GRU*:            CONGELADOS
+RECURRENT*:                     GRU/N06
+ARIMA*:                         ARIMA(6,1,12)
+VAR*:                           VAR(5)
+TREE*:                          LGB01
+
+INPUTS
+------------------------------------------------------------------------------------------------------------------------------
+023 SHA-256:                    af9d0d5984fd5e98c6660227f7bd98e246dbf934ad8df416439c2fd5bb59b174
+028 SHA-256:                    26379146225af9f0e804696e518cb31e81d4060614d96d1fdff4494cfec19e82
+008 SHA-256:                    cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a
+010 SHA-256:                    aeb527f1c7966cb91aeececd67d2da8e1f114236608e09296d9885ad1de0f530
+022 SHA-256:                    fc8037337a5835c153f42f0f4eb53ef95cb25f7e6562b5aa65ff3e327c543de2
+Recurrent predictions SHA:      a9f4f277bbf7f6415cd56ea1763e7afa74f307fd70f5d5c108844cbc1e964d19
+Tree manifest SHA:              f0a296c21b3077b2f9c8788fbb118572a203021ae69074bb1a4a2b027f3d2b46
+Tree predictions SHA:           7f787d74de5b593811e7988767d891d4aa70e0f8826bb1a302f20e4d0e7e61ad
+Stat manifest SHA:              847f877144f2932e0b5967b1de0678898cb640434dbfb20f2f9805d7c29883a7
+Stat predictions SHA:           21ebddf20569533a9d1ed66547cc4393f9c3b7e6721515c68eb3eb9dfc95d353
+Stat model column:              config
+
+INFERENCIA
+------------------------------------------------------------------------------------------------------------------------------
+Loss:                           absolute error
+Differential:                   reference - model
+Positive:                       model improves
+Bootstrap repetitions:          5000
+Primary block:                  12
+Sensitivity blocks:             6 / 12 / 24
+Confidence:                     0.95
+Random seed:                    20260717
+DM-HAC kernel:                  Bartlett
+DM-HAC lag:                     12 in H1/H3/H6/H12
+Multiple-testing correction:    NONE
+Primary comparisons:             24
+
+CONTRASTES PRIMARIOS
+------------------------------------------------------------------------------------------------------------------------------
+gru_vs_persistence       H1  | GRU* vs Persistence | improvement=-2.7932 Mbit/s | CI=[-4.6939, -0.9786] | P(improve)=0.0016 | DM-HAC p=0.0055148 | bootstrap=reference_better
+gru_vs_persistence       H3  | GRU* vs Persistence | improvement=-1.4922 Mbit/s | CI=[-3.7533, +0.6237] | P(improve)=0.0876 | DM-HAC p=0.177777 | bootstrap=not_distinguishable
+gru_vs_persistence       H6  | GRU* vs Persistence | improvement=-15.0033 Mbit/s | CI=[-21.6252, -8.7077] | P(improve)=0.0000 | DM-HAC p=1.49185e-05 | bootstrap=reference_better
+gru_vs_persistence       H12 | GRU* vs Persistence | improvement=-23.8136 Mbit/s | CI=[-33.6931, -14.4171] | P(improve)=0.0000 | DM-HAC p=2.62589e-06 | bootstrap=reference_better
+lstm_vs_persistence      H1  | LSTM* vs Persistence | improvement=-0.3281 Mbit/s | CI=[-1.5441, +0.8317] | P(improve)=0.2926 | DM-HAC p=0.597754 | bootstrap=not_distinguishable
+lstm_vs_persistence      H3  | LSTM* vs Persistence | improvement=-5.5511 Mbit/s | CI=[-8.6243, -2.7693] | P(improve)=0.0000 | DM-HAC p=0.000288198 | bootstrap=reference_better
+lstm_vs_persistence      H6  | LSTM* vs Persistence | improvement=-5.3781 Mbit/s | CI=[-9.1603, -1.5742] | P(improve)=0.0020 | DM-HAC p=0.00655245 | bootstrap=reference_better
+lstm_vs_persistence      H12 | LSTM* vs Persistence | improvement=-13.3275 Mbit/s | CI=[-19.2586, -7.5704] | P(improve)=0.0000 | DM-HAC p=1.43279e-05 | bootstrap=reference_better
+recurrent_vs_arima       H1  | RECURRENT* vs ARIMA* | improvement=-3.8928 Mbit/s | CI=[-5.5597, -2.3147] | P(improve)=0.0000 | DM-HAC p=7.60274e-06 | bootstrap=reference_better
+recurrent_vs_arima       H3  | RECURRENT* vs ARIMA* | improvement=-3.2870 Mbit/s | CI=[-5.3958, -1.3101] | P(improve)=0.0008 | DM-HAC p=0.00253597 | bootstrap=reference_better
+recurrent_vs_arima       H6  | RECURRENT* vs ARIMA* | improvement=-16.4732 Mbit/s | CI=[-23.2534, -10.2276] | P(improve)=0.0000 | DM-HAC p=1.11484e-06 | bootstrap=reference_better
+recurrent_vs_arima       H12 | RECURRENT* vs ARIMA* | improvement=-25.0038 Mbit/s | CI=[-34.5550, -15.6840] | P(improve)=0.0000 | DM-HAC p=4.16874e-07 | bootstrap=reference_better
+recurrent_vs_tree        H1  | RECURRENT* vs TREE* | improvement=+5.4472 Mbit/s | CI=[+3.0524, +8.0207] | P(improve)=1.0000 | DM-HAC p=2.99688e-05 | bootstrap=model_better
+recurrent_vs_tree        H3  | RECURRENT* vs TREE* | improvement=+17.5395 Mbit/s | CI=[+12.3367, +22.7595] | P(improve)=1.0000 | DM-HAC p=4.9849e-10 | bootstrap=model_better
+recurrent_vs_tree        H6  | RECURRENT* vs TREE* | improvement=+12.6657 Mbit/s | CI=[+6.9130, +18.4065] | P(improve)=1.0000 | DM-HAC p=5.05562e-05 | bootstrap=model_better
+recurrent_vs_tree        H12 | RECURRENT* vs TREE* | improvement=+5.3007 Mbit/s | CI=[-1.8504, +12.2563] | P(improve)=0.9276 | DM-HAC p=0.149525 | bootstrap=not_distinguishable
+recurrent_vs_var         H1  | RECURRENT* vs VAR* | improvement=-3.9370 Mbit/s | CI=[-5.7642, -2.2661] | P(improve)=0.0000 | DM-HAC p=1.72541e-05 | bootstrap=reference_better
+recurrent_vs_var         H3  | RECURRENT* vs VAR* | improvement=-3.5509 Mbit/s | CI=[-5.7342, -1.5117] | P(improve)=0.0004 | DM-HAC p=0.00132378 | bootstrap=reference_better
+recurrent_vs_var         H6  | RECURRENT* vs VAR* | improvement=-16.7996 Mbit/s | CI=[-23.4498, -10.5623] | P(improve)=0.0000 | DM-HAC p=8.32964e-07 | bootstrap=reference_better
+recurrent_vs_var         H12 | RECURRENT* vs VAR* | improvement=-25.1409 Mbit/s | CI=[-35.0603, -15.4175] | P(improve)=0.0000 | DM-HAC p=5.51062e-07 | bootstrap=reference_better
+rnn_vs_persistence       H1  | RNN* vs Persistence | improvement=-1.4729 Mbit/s | CI=[-3.2391, +0.2558] | P(improve)=0.0510 | DM-HAC p=0.105401 | bootstrap=not_distinguishable
+rnn_vs_persistence       H3  | RNN* vs Persistence | improvement=-3.1042 Mbit/s | CI=[-5.6904, -0.6441] | P(improve)=0.0060 | DM-HAC p=0.0191129 | bootstrap=reference_better
+rnn_vs_persistence       H6  | RNN* vs Persistence | improvement=-4.3877 Mbit/s | CI=[-7.6418, -1.3256] | P(improve)=0.0020 | DM-HAC p=0.00921172 | bootstrap=reference_better
+rnn_vs_persistence       H12 | RNN* vs Persistence | improvement=-9.5085 Mbit/s | CI=[-14.4727, -4.5567] | P(improve)=0.0000 | DM-HAC p=0.00028856 | bootstrap=reference_better
+
+RESIDUOS — REPRESENTANTES RECURRENTES
+------------------------------------------------------------------------------------------------------------------------------
+GRU*   H1  | MAE=20.0920 | RMSE=26.8083 | bias=-11.1343 | underpred=28.41% | P95=54.0851 Mbit/s
+GRU*   H3  | MAE=22.7761 | RMSE=29.9979 | bias=-11.9698 | underpred=28.83% | P95=61.9182 Mbit/s
+GRU*   H6  | MAE=38.8965 | RMSE=48.1305 | bias=-27.0879 | underpred=21.94% | P95=96.4080 Mbit/s
+GRU*   H12 | MAE=51.6913 | RMSE=62.9004 | bias=-40.0689 | underpred=17.60% | P95=116.3796 Mbit/s
+LSTM*  H1  | MAE=17.6268 | RMSE=24.5715 | bias=-5.3391 | underpred=37.54% | P95=52.0236 Mbit/s
+LSTM*  H3  | MAE=26.8350 | RMSE=33.5039 | bias=-14.2955 | underpred=27.17% | P95=63.0942 Mbit/s
+LSTM*  H6  | MAE=29.2713 | RMSE=37.3016 | bias=-19.1531 | underpred=23.62% | P95=77.7284 Mbit/s
+LSTM*  H12 | MAE=41.2051 | RMSE=49.4775 | bias=-28.2930 | underpred=26.23% | P95=90.8643 Mbit/s
+RNN*   H1  | MAE=18.7717 | RMSE=25.1514 | bias=-7.2152 | underpred=36.21% | P95=50.3637 Mbit/s
+RNN*   H3  | MAE=24.3882 | RMSE=30.6346 | bias=-13.3719 | underpred=27.17% | P95=58.6746 Mbit/s
+RNN*   H6  | MAE=28.2810 | RMSE=35.0499 | bias=-18.5820 | underpred=22.95% | P95=66.1472 Mbit/s
+RNN*   H12 | MAE=37.3862 | RMSE=44.3245 | bias=-29.7350 | underpred=16.41% | P95=82.3623 Mbit/s
+
+Runtime seconds:                6.715
+STATUS:                         PASS
+SOURCE PREDICTIONS MODIFIED:    NO
+SELECTION CHANGED:              NO
+TRAINING/REFIT/TUNING:          NO
+RECURRENT-CLOSURE-001:          NOT RUN

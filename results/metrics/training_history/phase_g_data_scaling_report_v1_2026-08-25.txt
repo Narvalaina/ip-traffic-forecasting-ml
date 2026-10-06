@@ -1,0 +1,19 @@
+====================================================================================================================================
+PHASE G — DATA-SCALING-EXPLORATORY-001
+====================================================================================================================================
+Status: PASS
+Campaign seconds: 3868.867505
+Histories: [1, 2, 4, 8]
+Models: Persistence / VAR(5) / GRU-N06 / Transformer-T01-L24
+Horizons: [1, 3, 6, 12]
+Test rows: 1947
+Predictions rows: 124320
+Metric rows: 64
+Neural epoch rows: 32
+Failed cells: 0
+Phase A-F modified: NO
+Model reselection: NO
+Retuning: NO
+Best-seed selection: NO
+
+DATA-SCALING-EXPLORATORY-001 = PASS

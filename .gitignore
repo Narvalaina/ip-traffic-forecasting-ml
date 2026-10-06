@@ -1,0 +1,55 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*:Zone.Identifier
+
+# Local datasets: never redistribute through this repository
+data/raw/
+data/interim/
+data/processed/
+
+# Large / private derived payloads
+results/predictions/
+results/checkpoints/
+*.parquet
+*.feather
+
+# Archives, temporary files, logs and backups
+*.zip
+*.rar
+*.tar
+*.tar.gz
+*.tgz
+*.bak
+*.part
+*.log
+*~
+
+# Local environment / secrets
+.env
+.env.*
+!.env.example
+
+# Python bytecode
+*.pyc

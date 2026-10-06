@@ -1,0 +1,49 @@
+================================================================================================================
+UGR'16 JUNE BLIND — FINAL STATISTICAL EXTERNAL EVALUATION
+================================================================================================================
+Campaign: UGR16-STATISTICAL-MODELS-001
+Run: UGR16-STATISTICAL-JUNE-BLIND-001
+Runner SHA-256: 05d9a79adcb88b4b8eba820f9ee34a9800ced08579fefc649d6a7e7b218bbcd2
+Freeze 008 SHA-256: cc98c4f7b74e2d0ce6515ac1a989bef2b20de0a921f63a5d0346591f2456ad1a
+June input SHA-256: d528047b6d93d9b93f03b016c408c4a660447eb9c1ab1bd680f6dcbf628b56f3
+June split manifest SHA-256: a641f0bf011c705cfb8fb25c9042a198461918b01dddb284644a309b783adb39
+
+GOVERNANCE
+----------------------------------------------------------------------------------------------------------------
+Selection performed in June: NO
+Tuning performed in June: NO
+SARIMA_STATUS: NOT_EVALUABLE_WITHIN_FROZEN_RESOURCE_BUDGET
+
+SPLIT
+----------------------------------------------------------------------------------------------------------------
+Total: 2004
+Train: 1402
+Blind test: 602
+Boundary: 2016-06-17T21:50:00
+Train end: 2016-06-17T21:45:00
+Blind start: 2016-06-17T21:50:00
+Parameter refit: NO
+Observed history/state update: YES
+
+FROZEN REPRESENTATIVES
+----------------------------------------------------------------------------------------------------------------
+AR: AR(24)
+MA: MA(12)
+ARMA: ARMA(24,3)
+ARIMA: ARIMA(6,1,12)
+VAR: VAR(5)
+
+EXTERNAL RESULTS
+----------------------------------------------------------------------------------------------------------------
+rank=1 VAR VAR(5) Score=0.92858992 (descriptive only)
+rank=2 ARIMA ARIMA(6,1,12) Score=0.93697437 (descriptive only)
+rank=3 AR AR(24) Score=1.06574163 (descriptive only)
+rank=4 ARMA ARMA(24,3) Score=1.07501526 (descriptive only)
+rank=5 MA MA(12) Score=2.00331455 (descriptive only)
+
+GLOBAL RESULT
+----------------------------------------------------------------------------------------------------------------
+STATUS: PASS
+Failed frozen representatives: []
+Frozen-model substitution: FORBIDDEN
+June used for selection: NO

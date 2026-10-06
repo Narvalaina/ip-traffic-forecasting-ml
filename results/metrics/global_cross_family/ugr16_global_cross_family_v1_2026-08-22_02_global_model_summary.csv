@@ -1,0 +1,7 @@
+model,model_order,global_score_mean_mae_ratio_vs_persistence,mean_mae_rank_across_horizons,best_horizon_ratio_vs_persistence,worst_horizon_ratio_vs_persistence,horizons_ratio_below_1,horizons_ratio_equal_1,horizons,descriptive_only,creates_global_star
+Persistence,0,1.0,3.0,1.0,1.0,0,4,4,True,False
+ARIMA*,1,0.9369743720447492,2.0,0.9156711476500397,0.9573065162472121,4,0,4,True,False
+VAR*,2,0.9285899168179156,1.0,0.9032728457369549,0.9523867542862804,4,0,4,True,False
+TREE*,3,1.8932316768441653,6.0,1.4763582871300864,2.1580291652147827,0,0,4,True,False
+RECURRENT*,4,1.4284320382576914,4.75,1.0701084098584899,1.8542172540651576,0,0,4,True,False
+TRANSFORMER*,5,1.232567409317892,4.25,1.1390816954959408,1.3413629868113508,0,0,4,True,False

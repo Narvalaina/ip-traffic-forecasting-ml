@@ -1,0 +1,48 @@
+============================================================================================================================
+TRANSFORMER-JUNE-BLIND-001 — POST-RUN RECOVERY REPORT
+============================================================================================================================
+RECOVERY STATUS: PASS
+TRAINING RERUN: NO
+BLIND PREDICTION RERUN: NO
+SCIENTIFIC OUTPUTS MODIFIED: NO
+
+INCIDENT
+Original runner return code: 1
+Stage: post-training aggregate validation
+Root cause: expected blind_targets_used_for_fitting=False was passed into all(validation.values()).
+
+SCIENTIFIC EXECUTION RECOVERED
+TRANSFORMER*: T01/L24
+Canonical seed: 20260820
+Training stages: 8
+Runtime rows: 4
+Epoch-selection rows: 4
+Blind prediction rows: 2390
+Horizon metric rows: 4
+TRANSFORMER* CHANGED: NO
+BEST SEED SELECTED: NO
+RETUNING: NO
+BLIND-TARGET-DRIVEN FITTING: NO
+
+BEST EPOCHS
+H1: 13
+H3: 16
+H6: 3
+H12: 4
+
+BLIND METRICS
+H1  n=602 best_epoch=13 MAE=19767802.725874 RMSE=26401169.625434 ratio_vs_Persistence=1.142730156 skill=-0.142730156 bias=-6088674.055644 underpred_pct=41.362126 P95=54079878.717120
+H3  n=600 best_epoch=16 MAE=24244138.598118 RMSE=30918887.139711 ratio_vs_Persistence=1.139081695 skill=-0.139081695 bias=-8963918.311750 underpred_pct=37.500000 P95=61894168.411681
+H6  n=597 best_epoch=3 MAE=31230690.194713 RMSE=38302092.614762 ratio_vs_Persistence=1.307094799 skill=-0.307094799 bias=-21533307.903076 underpred_pct=23.283082 P95=71307236.242529
+H12 n=591 best_epoch=4 MAE=37394071.346599 RMSE=44958183.220613 ratio_vs_Persistence=1.341362987 skill=-0.341362987 bias=-28565786.938061 underpred_pct=18.443316 P95=84696157.912181
+
+INDEPENDENT AUDIT
+Metric recomputation: PASS
+Target pairing against frozen June: PASS
+Persistence pairing against current-origin observation: PASS
+Finite predictions: PASS
+
+TRANSFORMER-INFERENCE-RESIDUALS-001: NOT RUN
+TRANSFORMER-CLOSURE-001: NOT RUN
+PHASE F: NOT STARTED
+PHASE G: NOT AUTHORIZED

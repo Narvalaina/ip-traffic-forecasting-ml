@@ -1,0 +1,26 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it and the associated Master's Thesis when appropriate."
+title: "IP Traffic Forecasting with Machine Learning"
+type: software
+authors:
+  - family-names: "Gámez Cartagena"
+    given-names: "Fernando Tomás"
+abstract: >-
+  Curated research repository derived from the Master's Thesis
+  "Predicción de tráfico IP mediante aprendizaje automático", covering
+  multihorizon IP-traffic forecasting with statistical, machine-learning and
+  deep-learning model families, temporal external evaluation, residual
+  analysis and reproducibility documentation.
+keywords:
+  - IP traffic forecasting
+  - time series
+  - machine learning
+  - deep learning
+  - ARIMA
+  - VAR
+  - recurrent neural networks
+  - Transformer
+  - telecommunications
+repository-code: "https://github.com/Narvalaina/ip-traffic-forecasting-ml"
+version: "1.0.0"
+date-released: 2026-10-06
