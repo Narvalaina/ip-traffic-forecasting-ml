@@ -22,5 +22,5 @@ keywords:
   - Transformer
   - telecommunications
 repository-code: "https://github.com/Narvalaina/ip-traffic-forecasting-ml"
-version: "1.0.0"
-date-released: 2026-10-06
+version: "1.0.1"
+date-released: "2026-10-07"

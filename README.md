@@ -142,17 +142,25 @@ See:
 
 ## Selected public figures
 
-### ugr16 global cross family 01 mae by horizon
+The figures below are **public-summary visualizations reconstructed from the final numerical results reported in the thesis and used in the defense narrative**. They summarize the principal external evaluation on **June Week #3**. No model selection, hyperparameter tuning or scientific result is reopened here.
 
-![ugr16 global cross family 01 mae by horizon](results/figures/ugr16_global_cross_family_01_mae_by_horizon.png)
+### External evaluation — MAE by forecast horizon
 
-### ugr16 global cross family 04 primary direction matrix
+![External evaluation MAE by forecast horizon](results/figures/public_summary/external_evaluation_mae.png)
 
-![ugr16 global cross family 04 primary direction matrix](results/figures/ugr16_global_cross_family_04_primary_direction_matrix.png)
+VAR(5) has the lowest **descriptive MAE** at H1–H12, with ARIMA(6,1,12) very close. Their direct paired comparison is **not distinguishable at any of the four horizons**, so the MAE ordering is not presented as inferential superiority.
 
-### ugr16 global cross family 06 p95 absolute error
+### Paired comparison balance across horizons
 
-![ugr16 global cross family 06 p95 absolute error](results/figures/ugr16_global_cross_family_06_p95_absolute_error.png)
+![Paired comparison balance](results/figures/public_summary/paired_comparison_balance.png)
+
+Each representative participates in twenty direct comparisons: five rivals across four horizons. The counts are **non-transitive** and do not define a global model ranking. VAR and ARIMA provide the strongest external evidence, while their direct comparison remains non-distinguishable across H1–H12.
+
+### P95 absolute error at 60 minutes
+
+![P95 absolute error at 60 minutes](results/figures/public_summary/p95_h12.png)
+
+At H12, ARIMA(6,1,12) has the lowest P95 absolute error, followed by VAR(5) and persistence. This complements the MAE view and illustrates why the project does **not** claim a universal winner: the preferred model depends on the error criterion and operating context.
 
 ## Results and artifacts
 
